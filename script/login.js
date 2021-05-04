@@ -1,0 +1,44 @@
+const loginForm = document.getElementsByClassName("login-form");
+let accountNavBarLink = document.getElementById("nav-bar-acount");
+const loginSubmitButton = document.getElementById("login-submit");
+console.log(`loginSubmitButton`, loginSubmitButton);
+
+localStorage.setItem("userName", "");
+localStorage.setItem("password", "password");
+
+console.log(
+  `localStorage.getItem("password")`,
+  localStorage.getItem("password")
+);
+
+console.log(
+  `accountNavBarLink.getAttribute(href)`,
+  accountNavBarLink.getAttribute("href")
+);
+
+const handleLogin = () => {
+  if (loginForm != null) {
+    const userName = document.getElementById("usrname");
+    const password = document.getElementById("passcode");
+    console.log(`password`, password);
+    loginSubmitButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.getItem("password") === password.value
+        ? // (console.log(
+          //     `object`,
+          //     localStorage.getItem("password") === password.value
+          //   ),
+          (accountNavBarLink.setAttribute(
+            "href",
+            "https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment/homepage/myAccount/my-account.html"
+          ),
+          console.log(`object`, accountNavBarLink),
+          (window.location =
+            "https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment/homepage/myAccount/my-account.html"),
+          console.log(`accountNavBarLink`, accountNavBarLink))
+        : e.preventDefault();
+    });
+  }
+};
+
+document.body.onload = handleLogin();
