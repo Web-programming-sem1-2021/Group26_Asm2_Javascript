@@ -1,5 +1,4 @@
 const loginForm = document.getElementsByClassName("login-form");
-let accountNavBarLink = document.getElementById("nav-bar-acount");
 const loginSubmitButton = document.getElementById("login-submit");
 console.log(`loginSubmitButton`, loginSubmitButton);
 
@@ -11,34 +10,29 @@ console.log(
   localStorage.getItem("password")
 );
 
-console.log(
-  `accountNavBarLink.getAttribute(href)`,
-  accountNavBarLink.getAttribute("href")
-);
+const handleWrongPassword = () => {
+  const invalidPasswordMessage = "Your password is invalid!";
+  const invalidPasswordElement = document.getElementById(
+    "wrong-password-message"
+  );
+  invalidPasswordElement.style.color = "red";
+  invalidPasswordElement.value = invalidPasswordMessage;
+};
 
 const handleLogin = () => {
   if (loginForm != null) {
     const userName = document.getElementById("usrname");
     const password = document.getElementById("passcode");
-    console.log(`password`, password);
+
     loginSubmitButton.addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.getItem("password") === password.value
-        ? // (console.log(
-          //     `object`,
-          //     localStorage.getItem("password") === password.value
-          //   ),
-          (accountNavBarLink.setAttribute(
-            "href",
-            "https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment/homepage/myAccount/my-account.html"
-          ),
-          console.log(`object`, accountNavBarLink),
-          (window.location =
-            "https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment/homepage/myAccount/my-account.html"),
-          console.log(`accountNavBarLink`, accountNavBarLink))
-        : e.preventDefault();
+        ? (localStorage.setItem("email", userName.value),
+          localStorage.setItem("passcode", password.value),
+          (window.location = "../myAccount/my-account.html"))
+        : handleWrongPassword();
     });
   }
 };
 
-document.body.onload = handleLogin();
+handleLogin();
