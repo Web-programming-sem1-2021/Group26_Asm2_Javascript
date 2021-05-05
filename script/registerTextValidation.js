@@ -10,7 +10,7 @@ const city = document.getElementById("city");
 const zipCode = document.getElementById("zip");
 
 registerSubmitButton.addEventListener("click", (e) => {
-  debugger;
+  
   const emailPattern = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   const phoneNumberPattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im;
   const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
@@ -18,29 +18,52 @@ registerSubmitButton.addEventListener("click", (e) => {
   const adddressPattern = /[A-Za-z]{3,}/;
   const cityPattern = /[A-Za-z]{3,}/;
   const zipCodePattern = /[0-9]{4,6}/;
+
+  const emailErrorMessage = document.getElementById("email-error-message");
+  const phoneErrorMessage = document.getElementById("phone-error-message");
+  const passwordErrorMessage = document.getElementById(
+    "password-error-message"
+  );
+  const retypePasswordErrorMessage = document.getElementById(
+    "retype-password-error-message"
+  );
+  const firstNameErrorMessage = document.getElementById(
+    "first-name-error-message"
+  );
+  const lastNameErrorMessage = document.getElementById(
+    "last-name-error-message"
+  );
+  const cityErrorMessage = document.getElementById("city-error-message");
+  const zipErrorMessage = document.getElementById("zip-error-message");
+
   //email
   console.log(
     "emailPattern.test(email.value) :>> ",
     emailPattern.test(email.value)
   );
   emailPattern.test(email.value)
-    ? (email.setCustomValidity("Right"),
+    ? ((emailErrorMessage.textContent = ""),
+      (email.style.boxShadow = "0 0 10px green"),
       email.reportValidity(),
       e.preventDefault())
-    : (email.setCustomValidity(
-        "Your email must be in a correct form (abc#def@mail.com)"
-      ),
-      (email.style.boxShadow = "0 0 10px red"),
+    : ((emailErrorMessage.style.color = "red"),
+    (emailErrorMessage.textContent =
+      "Your email must be in a correct form (abc#def@mail.com)!"),
+    (email.style.boxShadow = "0 0 10px red"),
       email.reportValidity(),
       e.preventDefault());
 
   //phone
+  console.log(
+    " phoneNumberPattern.test(phone.value) :>> ",
+    phoneNumberPattern.test(phone.value)
+  );
   phoneNumberPattern.test(phone.value)
-    ? (phone.setCustomValidity("Right"), (phone.style.boxShadow = "none"))
-    : (phone.setCustomValidity("Phone number should contains number only!"),
-      (phone.style.boxShadow = "0 0 10px red"),
-      phone.reportValidity(),
-      e.preventDefault());
+    ? (phone.setCustomValidity(""), (phone.style.boxShadow = "0 0 10px green"))
+    : ((phoneErrorMessage.style.color = "red"),
+      (phoneErrorMessage.textContent =
+        "Your email must be in a correct form (abc#def@mail.com)!"),
+      (phone.style.boxShadow = "0 0 10px red"));
 
   //password
   passwordPattern.test(password.value)

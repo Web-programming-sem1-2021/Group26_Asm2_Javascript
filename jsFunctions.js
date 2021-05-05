@@ -24,9 +24,10 @@ myAccount.addEventListener("click", (e) => {
   ) {
     localStorage.getItem("password") === localStorage.getItem("passcode")
       ? (window.location =
-          "https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment/homepage/myAccount/my-account.html")
+          "https://web-programming-sem1-2021.github.io/Group26_Asm2_Javascript/homepage/myAccount/my-account.html")
       : {};
   } else {
-    window.location = "./myAccount/login.html";
+    window.location =
+      "https://web-programming-sem1-2021.github.io/Group26_Asm2_Javascript/homepage/myAccount/login.html";
   }
 });
