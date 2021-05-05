@@ -82,8 +82,6 @@ const slider = document.getElementById("slider");
 const buttonRight = document.getElementById("slide-right");
 const buttonLeft = document.getElementById("slide-left");
 
-sliders.map((slide) => console.log(`slide`, slide));
-
 buttonLeft.forEach((button) =>
   button.addEventListener(
     "click",
@@ -105,7 +103,6 @@ const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert("Left Scroll:" + slider.scrollLeft);
 
 //AUTO PLAY THE SLIDER
-
 function autoPlay() {
   sliders.forEach((slider) =>
     slider.scrollLeft > maxScrollLeft - 1
