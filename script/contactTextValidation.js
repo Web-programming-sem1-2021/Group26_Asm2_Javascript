@@ -86,7 +86,7 @@ contactSubmitButton.addEventListener("click", (e) => {
     ? (phone.style.boxShadow = "0 0 10px green")
     : ((phoneErrorMessage.style.color = "red"),
       (phoneErrorMessage.textContent =
-        "Your email must be in a correct form (abc#def@mail.com)!"),
+        "Your phone number must be from 9 to 11 and contain number only!"),
       (phone.style.boxShadow = "0 0 10px red"));
 
   //checkboxes
@@ -98,17 +98,17 @@ const message = document.getElementById("counter-message");
 const input = document.querySelector("textarea");
 input.addEventListener("input", updateValue);
 function updateValue(e) {
-  message.style.color = "red";
+  
   let currentCharacters = e.target.value.length + 1;
   let wordLeft50 = 50 - currentCharacters; //0 - 50
   let wordLeft500 = 500 - currentCharacters; // 50 - 500
   let wordOver = currentCharacters - 500; //500 -
   if (!currentCharacters == 0) {
     wordLeft50 <= 50 && wordLeft50 > 1
-      ? (message.textContent = `${wordLeft50} is needed to reach the required character number!`)
+      ? (message.style.color = "red",message.textContent = `${wordLeft50} is needed to reach the required character number!`)
       : wordLeft500 <= 500 && wordLeft500 > 0
-      ? (message.textContent = `You can text ${wordLeft500} more letters!`)
-      : (message.textContent = `Deleting ${wordOver} letters is needed!`);
+      ? (message.style.color = "green",message.textContent = `You can text ${wordLeft500} more letters!`)
+      : (message.style.color = "red",message.textContent = `Deleting ${wordOver} letters is needed!`);
   }
 }
 
