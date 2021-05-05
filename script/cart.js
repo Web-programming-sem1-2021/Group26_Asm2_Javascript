@@ -13,13 +13,13 @@ for (i = 0; i < inc.length; i++) {
     .previousElementSibling.setAttribute(
       "onclick",
       "stepperInput('" + id + "', -" + step + ", " + min + ")"
-    ); 
+    );
   document
     .getElementById(id)
     .nextElementSibling.setAttribute(
       "onclick",
       "stepperInput('" + id + "', " + step + ", " + max + ")"
-    ); 
+    );
 }
 
 function stepperInput(id, s, m) {
@@ -36,6 +36,6 @@ function stepperInput(id, s, m) {
 }
 
 function changeColor(newColor) {
-  var elem = document.getElementById('productName');
+  var elem = document.getElementById("productName");
   elem.style.color = newColor;
 }
