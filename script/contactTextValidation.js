@@ -20,14 +20,13 @@ const validateCheckboxes = () => {
 const checkboxErrorMessage = document.getElementById("checkbox-error-message");
 const validate = () =>
   !(validateCheckboxes().checkNumber >= 1)
-    ? (
-      Array.from(scheduleCheckboxes).forEach(
+    ? (Array.from(scheduleCheckboxes).forEach(
         (checkbox) => (checkbox.style.boxShadow = "0 0 10px red !important")
       ),
       (checkboxErrorMessage.style.color = "red"),
       (checkboxErrorMessage.textContent = "Check atleast 1 checkbox!"),
       console.log("hahaahaa :>> ", validateCheckboxes()))
-    : checkboxErrorMessage.textContent = "";
+    : (checkboxErrorMessage.textContent = "");
 
 console.log("scheduleCheckboxes :>> ", scheduleCheckboxes);
 
@@ -84,7 +83,7 @@ contactSubmitButton.addEventListener("click", (e) => {
     phoneNumberPattern.test(phone.value)
   );
   phoneNumberPattern.test(phone.value)
-    ? (phone.setCustomValidity(""), (phone.style.boxShadow = "0 0 10px green"))
+    ? (phone.style.boxShadow = "0 0 10px green")
     : ((phoneErrorMessage.style.color = "red"),
       (phoneErrorMessage.textContent =
         "Your email must be in a correct form (abc#def@mail.com)!"),
