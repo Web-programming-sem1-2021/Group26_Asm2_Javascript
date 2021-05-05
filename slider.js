@@ -1,4 +1,4 @@
-const slides = document.querySelector(".slider")?.children;
+const slides = document.querySelector(".main-slider")?.children;
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
@@ -64,13 +64,13 @@ function nextSlide() {
   changeSlide();
 }
 
-function changeSlide() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-  }
+// function changeSlide() {
+//   for (let i = 0; i < slides.length; i++) {
+//     slides[i].classList.remove("active");
+//   }
 
-  slides[index].classList.add("active");
-}
+//   slides[index].classList.add("active");
+// }
 
 function resetTimer() {
   clearInterval(timer);
@@ -85,41 +85,58 @@ let timer = setInterval(autoPlay, 1000);
 
 //TODO: Ram
 
-let thumbnails = document.getElementsByClassName("thumbnail");
-let slider = document.getElementById("slider");
+let thumbnails = Array.from(document.getElementsByClassName("thumbnail"));
+let sliders = Array.from(document.getElementsByClassName("slider"));
+console.log(typeof sliders);
 
-let buttonRight = document.getElementById("slide-right");
-let buttonLeft = document.getElementById("slide-left");
+let buttonRight = Array.from(document.getElementsByClassName("slide-right"));
+let buttonLeft = Array.from(document.getElementsByClassName("slide-left"));
 
-buttonLeft.addEventListener("click", function () {
-  slider.scrollLeft -= 125;
-});
+sliders.map((slide) => console.log(`slide`, slide));
 
-buttonRight.addEventListener("click", function () {
-  slider.scrollLeft += 125;
-});
+() =>
+  buttonLeft.forEach((button) =>
+    button.addEventListener(
+      "click",
+      (e) => e.preventDefault(),
+      sliders.forEach((slider) => (slider.scrollLeft -= 125))
+    )
+  );
 
-const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+() =>
+  buttonRight.forEach((button) =>
+    button.addEventListener(
+      "click",
+      (e) => e.preventDefault(),
+      sliders.forEach((slider) => (slider.scrollLeft += 125))
+    )
+  );
+
+const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert(maxScrollLeft);
 // alert("Left Scroll:" + slider.scrollLeft);
 
 //AUTO PLAY THE SLIDER
+
 function autoPlay() {
-  if (slider.scrollLeft > maxScrollLeft - 1) {
-    slider.scrollLeft -= maxScrollLeft;
-  } else {
-    slider.scrollLeft += 1;
-  }
+  sliders.forEach((slider) =>
+    slider.scrollLeft > maxScrollLeft - 1
+      ? (slider.scrollLeft -= maxScrollLeft)
+      : (slider.scrollLeft += 1)
+  );
 }
 let play = setInterval(autoPlay, 50);
 
 // PAUSE THE SLIDE ON HOVER
-for (var i = 0; i < thumbnails.length; i++) {
-  thumbnails[i].addEventListener("mouseover", function () {
-    clearInterval(play);
-  });
+const stop = () =>
+  thumbnails.forEach(
+    (thumbnail) => (
+      thumbnail.addEventListener("mouseover", () => clearInterval(play)),
+      thumbnail.addEventListener(
+        "mouseout",
+        () => (play = setInterval(autoPlay, 50))
+      )
+    )
+  );
 
-  thumbnails[i].addEventListener("mouseout", function () {
-    return (play = setInterval(autoPlay, 50));
-  });
-}
+stop();
