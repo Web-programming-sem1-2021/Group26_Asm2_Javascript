@@ -82,9 +82,10 @@ contactSubmitButton.addEventListener("click", (e) => {
     ? (phone.setCustomValidity(""), (phone.style.boxShadow = "none"))
     : (phone.setCustomValidity("Phone number should contains number only!"),
       (phone.style.boxShadow = "0 0 10px red"));
-  validate();
   e.preventDefault();
 });
+
+validate();
 
 //message
 const message = document.getElementById("counter-message");
@@ -97,7 +98,7 @@ function updateValue(e) {
   let wordLeft500 = 500 - currentCharacters; // 50 - 500
   let wordOver = currentCharacters - 500; //500 -
   if (!currentCharacters == 0) {
-    wordLeft50 <= 50 && wordLeft50 > 0
+    wordLeft50 <= 50 && wordLeft50 > 1
       ? (message.textContent = `${wordLeft50} is needed to reach the required character number!`)
       : wordLeft500 <= 500 && wordLeft500 > 0
       ? (message.textContent = `You can text ${wordLeft500} more letters!`)

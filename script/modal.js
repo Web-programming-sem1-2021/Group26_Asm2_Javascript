@@ -44,7 +44,7 @@ console.log("modalOpenImages :>> ", modalOpenImages);
 const modalCloseButtons = document.querySelectorAll(".modal-close");
 
 modalOpenImages.forEach((image) => {
-  image.addEventListener("mouseover", () => {
+  image.addEventListener("click", () => {
     let modal = image.getAttribute("data-modal");
     document.getElementById(modal).style.display = "block";
   });
