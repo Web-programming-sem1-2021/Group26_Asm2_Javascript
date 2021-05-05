@@ -64,24 +64,24 @@ function nextSlide() {
   changeSlide();
 }
 
-// function changeSlide() {
-//   for (let i = 0; i < slides.length; i++) {
-//     slides[i].classList.remove("active");
-//   }
+function changeSlide() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
 
-//   slides[index].classList.add("active");
-// }
+  slides[index].classList.add("active");
+}
 
 function resetTimer() {
   clearInterval(timer);
-  timer = setInterval(autoPlay, 1000);
+  timer = setInterval(autoPlayMainSlider, 3000);
 }
 
-function autoPlay() {
+function autoPlayMainSlider() {
   nextSlide();
   updateCircleIndicator();
 }
-let timer = setInterval(autoPlay, 1000);
+let timer = setInterval(autoPlayMainSlider, 3000);
 
 //TODO: Ram
 
@@ -94,23 +94,21 @@ let buttonLeft = Array.from(document.getElementsByClassName("slide-left"));
 
 sliders.map((slide) => console.log(`slide`, slide));
 
-() =>
-  buttonLeft.forEach((button) =>
-    button.addEventListener(
-      "click",
-      (e) => e.preventDefault(),
-      sliders.forEach((slider) => (slider.scrollLeft -= 125))
-    )
-  );
+buttonLeft.forEach((button) =>
+  button.addEventListener(
+    "click",
+    (e) => e.preventDefault(),
+    sliders.forEach((slider) => (slider.scrollLeft -= 125))
+  )
+);
 
-() =>
-  buttonRight.forEach((button) =>
-    button.addEventListener(
-      "click",
-      (e) => e.preventDefault(),
-      sliders.forEach((slider) => (slider.scrollLeft += 125))
-    )
-  );
+buttonRight.forEach((button) =>
+  button.addEventListener(
+    "click",
+    (e) => e.preventDefault(),
+    sliders.forEach((slider) => (slider.scrollLeft += 125))
+  )
+);
 
 const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert(maxScrollLeft);
@@ -125,6 +123,7 @@ function autoPlay() {
       : (slider.scrollLeft += 1)
   );
 }
+console.log(`autoPlay()`, autoPlay());
 let play = setInterval(autoPlay, 50);
 
 // PAUSE THE SLIDE ON HOVER
