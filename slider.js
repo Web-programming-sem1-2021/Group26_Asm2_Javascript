@@ -1,4 +1,4 @@
-const slides = document.querySelector(".slider")?.children;
+const slides = Array.from(document.querySelector(".slider")?.children);
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
@@ -46,50 +46,41 @@ function updateCircleIndicator() {
   indicator.children[index].classList.add("active");
 }
 
-function prevSlide() {
-  if (index == 0) {
-    index = slides.length - 1;
-  } else {
-    index--;
-  }
-  changeSlide();
-}
+const prevSlide = () => {
+  index == 0 ? (index = slides.length - 1) : index--;
 
-function nextSlide() {
-  if (index == slides.length - 1) {
-    index = 0;
-  } else {
-    index++;
-  }
   changeSlide();
-}
+};
 
-function changeSlide() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("active");
-  }
+const nextSlide = () => {
+  index == slides.length - 1 ? (index = 0) : index++;
+  changeSlide();
+};
+
+const changeSlide = () => {
+  slides.forEach((slide) => slide.classList.remove("active"));
 
   slides[index].classList.add("active");
-}
+};
 
-function resetTimer() {
+const resetTimer = () => {
   clearInterval(timer);
-  timer = setInterval(autoPlay, 1000);
-}
+  timer = setInterval(autoPlayMainSlider, 3000);
+};
 
-function autoPlay() {
+const autoPlayMainSlider = () => {
   nextSlide();
   updateCircleIndicator();
-}
-let timer = setInterval(autoPlay, 1000);
+};
+let timer = setInterval(autoPlayMainSlider, 3000);
 
 //TODO: Ram
 
-let thumbnails = document.getElementsByClassName("thumbnail");
-let slider = document.getElementById("slider");
+const thumbnails = document.getElementsByClassName("thumbnail");
+const slider = document.getElementById("slider");
 
-let buttonRight = document.getElementById("slide-right");
-let buttonLeft = document.getElementById("slide-left");
+const buttonRight = document.getElementById("slide-right");
+const buttonLeft = document.getElementById("slide-left");
 
 buttonLeft.addEventListener("click", function () {
   slider.scrollLeft -= 125;
