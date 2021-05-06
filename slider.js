@@ -92,13 +92,13 @@ const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert("Left Scroll:" + slider.scrollLeft);
 
 //AUTO PLAY THE SLIDER
-function autoPlay() {
-  sliders.forEach((slider) =>
+const autoPlay = () => {
+  sliders.forEach((slider, index) =>
     slider.scrollLeft > maxScrollLeft - 1
       ? (slider.scrollLeft -= maxScrollLeft)
       : (slider.scrollLeft += 1)
   );
-}
+};
 let play = setInterval(autoPlay, 40);
 
 // PAUSE THE SLIDE ON HOVER

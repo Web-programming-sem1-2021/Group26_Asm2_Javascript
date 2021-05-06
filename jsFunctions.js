@@ -7,7 +7,7 @@ function handleResponsiveNavBar() {
   }
 }
 
-const myAccount = document.getElementById("nav-bar-acount");
+const myAccount = document.getElementById("nav-bar-account");
 
 myAccount.addEventListener("click", (e) => {
   e.preventDefault();
