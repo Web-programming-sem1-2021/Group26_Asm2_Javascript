@@ -102,11 +102,12 @@ img {
 .modal-content {
   background: #fff;
   padding: 50px auto 50px auto;
-  margin: 20% auto;
-  width: 50%;
-  height: 30%;
+  margin: auto auto;
+  width: 58%;
+  height: 100%;
   z-index: 30;
   border-radius: 10px;
+  overflow-y: scroll;
 }
 
 .modal-header {
