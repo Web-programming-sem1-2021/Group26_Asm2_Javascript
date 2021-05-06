@@ -1,10 +1,10 @@
-# group-26-HTML-CSS-assignment
+# Group26_Asm2_Javascript
 
 This is the root repository for Assignment 1 of Web Programming 1 course(COSC2430) semester 1/2021. It is owned by course group 26.
 
-## GITHUB: 'https://github.com/Web-programming-sem1-2021/group-26-HTML-CSS-assignment'
+## GITHUB: 'https://github.com/Web-programming-sem1-2021/Group26_Asm2_Javascript'
 
-## Website: 'https://web-programming-sem1-2021.github.io/group-26-HTML-CSS-assignment'
+## Website: 'https://web-programming-sem1-2021.github.io/Group26_Asm2_Javascript'
 
 ## Students
 
