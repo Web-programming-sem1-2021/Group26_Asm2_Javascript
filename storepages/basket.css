@@ -125,7 +125,7 @@ img {
   float: left;
   padding-left: 5px;
   float: left;
-  width: 355px;
+  width: 330px;
   height: 100px;
 }
 
@@ -167,12 +167,10 @@ img {
 }
 
 .quantity_button {
-  margin: 33px auto;
+  margin: 30px auto;
   height: 26px;
-  width: 71px;
-  text-align: center;
-  padding: 2px;
-  background-color: #ecf0f1;
+  width: 120px;
+  text-align: left;
 }
 
 .how_many {
@@ -209,9 +207,9 @@ img {
 }
 
 .price {
-  float: left;
+  float: right;
   width: 100px;
-  text-align: center;
+  text-align: right;
   line-height: 100px;
   font-size: 1.5em;
   color: #2c3e50;
@@ -266,4 +264,42 @@ img {
   height: 150px;
 
   margin: 0 auto;
+}
+
+/* file:///Users/joojeonghyeon/Downloads/animated-input-spinner-pure-javascript-csscss3/index.html */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  height: auto;
+}
+
+.stepper {
+  border: 1px solid #eee;
+  display: inline-block;
+  overflow: visible;
+  height: 2.1em;
+  background: #fff;
+  padding: 1px;
+}
+
+.stepper input {
+  width: 3em;
+  height: 100%;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  color: #000;
+}
+
+.stepper button {
+  width: 1.4em;
+  font-weight: 300;
+  height: 100%;
+  line-height: 0.1em;
+  font-size: 1.4em;
+  padding: 0.2em !important;
+  background: #eee;
+  color: #333;
+  border: none;
 }

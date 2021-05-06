@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="basket.css" />
+    <script src="../script/cart.js" async></script>
+    >
     <title>Document</title>
   </head>
   <body>
@@ -27,16 +29,25 @@
               </div>
               <div class="product_quantity">
                 <div class="quantity_button">
-                  <div class="how_many">1</div>
-                  <div class="add_sub">
-                    <div class="add">+</div>
-                    <div class="sub">-</div>
-                  </div>
+                  <span class="stepper">
+                    <button>–</button>
+                    <input
+                      type="number"
+                      id="stepper1"
+                      value="1"
+                      min="1"
+                      max="100"
+                      step="1"
+                      readonly
+                    />
+                    <button>+</button>
+                  </span>
                 </div>
               </div>
               <div class="price">$168.00</div>
             </div>
           </li>
+
           <li>
             <div class="item">
               <div class="product_image">
@@ -50,18 +61,28 @@
                 <h3 class="delete">Delete</h3>
                 <h3 class="save">Save</h3>
               </div>
+
               <div class="product_quantity">
                 <div class="quantity_button">
-                  <div class="how_many">1</div>
-                  <div class="add_sub">
-                    <div class="add">+</div>
-                    <div class="sub">-</div>
-                  </div>
+                  <span class="stepper">
+                    <button>–</button>
+                    <input
+                      type="number"
+                      id="stepper2"
+                      value="1"
+                      min="1"
+                      max="100"
+                      step="1"
+                      readonly
+                    />
+                    <button>+</button>
+                  </span>
                 </div>
               </div>
               <div class="price">$46.95</div>
             </div>
           </li>
+
           <li>
             <div class="item">
               <div class="product_image">
@@ -77,11 +98,19 @@
               </div>
               <div class="product_quantity">
                 <div class="quantity_button">
-                  <div class="how_many">1</div>
-                  <div class="add_sub">
-                    <div class="add">+</div>
-                    <div class="sub">-</div>
-                  </div>
+                  <span class="stepper">
+                    <button>–</button>
+                    <input
+                      type="number"
+                      id="stepper3"
+                      value="1"
+                      min="1"
+                      max="100"
+                      step="1"
+                      readonly
+                    />
+                    <button>+</button>
+                  </span>
                 </div>
               </div>
               <div class="price">$268.90</div>
