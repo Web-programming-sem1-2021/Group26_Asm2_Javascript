@@ -104,7 +104,7 @@ function autoPlay() {
   );
 }
 console.log(`autoPlay()`, autoPlay());
-let play = setInterval(autoPlay, 50);
+let play = setInterval(autoPlay, 40);
 
 // PAUSE THE SLIDE ON HOVER
 const stop = () =>
@@ -113,7 +113,7 @@ const stop = () =>
       thumbnail.addEventListener("mouseover", () => clearInterval(play)),
       thumbnail.addEventListener(
         "mouseout",
-        () => (play = setInterval(autoPlay, 50))
+        () => (play = setInterval(autoPlay, 40))
       )
     )
   );
