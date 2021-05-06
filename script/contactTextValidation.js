@@ -1,6 +1,11 @@
-//TODO: Minh
-
-const questions = [4, 6];
+// <========    CONSTANTS     ========>
+const ERROR_STYLING_OBJECT = {
+  errorTextColor: "red",
+  errorBorderStyle: "0 0 10px red",
+  okTextColor: "green",
+  okBorderStyle: "0 0 10px green",
+};
+// <========    Global Scope     ========>
 
 const userName = document.getElementById("name");
 const email = document.getElementById("email");
@@ -9,6 +14,13 @@ const contactSubmitButton = document.getElementById("contactSubmitButton");
 const form = document.querySelector("#sectionForm");
 const scheduleCheckboxes = form.querySelectorAll("input[type=checkbox]");
 const firstScheduleCheckbox = document.getElementById("day1");
+
+const {
+  errorTextColor,
+  errorBorderStyle,
+  okTextColor,
+  okBorderStyle,
+} = ERROR_STYLING_OBJECT;
 
 const validateCheckboxes = () => {
   let checkNumber = 0;
@@ -21,15 +33,14 @@ const checkboxErrorMessage = document.getElementById("checkbox-error-message");
 const validate = () =>
   !(validateCheckboxes().checkNumber >= 1)
     ? (Array.from(scheduleCheckboxes).forEach(
-        (checkbox) => (checkbox.style.boxShadow = "0 0 10px red !important")
+        (checkbox) => (checkbox.style.boxShadow = errorTextColor)
       ),
-      (checkboxErrorMessage.style.color = "red"),
+      (checkboxErrorMessage.style.color = errorTextColor),
       (checkboxErrorMessage.textContent = "Check atleast 1 checkbox!"))
     : (checkboxErrorMessage.textContent = "");
 
 //Contact
 contactSubmitButton.addEventListener("click", (e) => {
-  const error = document.getElementById("notify");
   const namePattern = /[A-Za-z]{3,}/;
   const phoneNumberPattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im;
   const emailPattern = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -41,27 +52,27 @@ contactSubmitButton.addEventListener("click", (e) => {
 
   namePattern.test(userName.value)
     ? ((nameErrorMessage.textContent = ""),
-      (userName.style.boxShadow = "0 0 10px green"))
-    : ((nameErrorMessage.style.color = "red"),
+      (userName.style.boxShadow = okBorderStyle))
+    : ((nameErrorMessage.style.color = errorTextColor),
       (nameErrorMessage.textContent =
         "Your name must exceed 3 characters and contain letters only!"),
-      (userName.style.boxShadow = "0 0 10px red"));
+      (userName.style.boxShadow = errorTextColor));
   //E-mail
   emailPattern.test(email.value)
     ? ((emailErrorMEssage.textContent = ""),
-      (email.style.boxShadow = "0 0 10px green"))
-    : ((emailErrorMEssage.style.color = "red"),
+      (email.style.boxShadow = okBorderStyle))
+    : ((emailErrorMEssage.style.color = errorTextColor),
       (emailErrorMEssage.textContent =
         "Your email must be in a correct form (abc#def@mail.com)!"),
-      (email.style.boxShadow = "0 0 10px red"));
+      (email.style.boxShadow = errorTextColor));
   //Phone number
 
   phoneNumberPattern.test(phone.value)
-    ? (phone.style.boxShadow = "0 0 10px green")
-    : ((phoneErrorMessage.style.color = "red"),
+    ? (phone.style.boxShadow = okBorderStyle)
+    : ((phoneErrorMessage.style.color = errorTextColor),
       (phoneErrorMessage.textContent =
         "Your phone number must be from 9 to 11 and contain number only!"),
-      (phone.style.boxShadow = "0 0 10px red"));
+      (phone.style.boxShadow = errorTextColor));
 
   //checkboxes
   validate();
@@ -78,33 +89,12 @@ function updateValue(e) {
   let wordOver = currentCharacters - 500; //500 -
   if (!currentCharacters == 0) {
     wordLeft50 <= 50 && wordLeft50 > 1
-      ? ((message.style.color = "red"),
+      ? ((message.style.color = errorTextColor),
         (message.textContent = `${wordLeft50} is needed to reach the required character number!`))
       : wordLeft500 <= 500 && wordLeft500 > 0
-      ? ((message.style.color = "green"),
+      ? ((message.style.color = okTextColor),
         (message.textContent = `You can text ${wordLeft500} more letters!`))
-      : ((message.style.color = "red"),
+      : ((message.style.color = errorTextColor),
         (message.textContent = `Deleting ${wordOver} letters is needed!`));
   }
 }
-
-//  else if (!userName.patternMismatch) {
-//   userName.setCustomValidity("Name must exceed 3 characters!");
-
-// if (messages.length > 0) {
-//   e.preventDefault();
-//   alert(message);
-// }
-
-// email
-// function ValidateEmail(mail) {
-//   if (
-//     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-//       myForm.email.value
-//     )
-//   ) {
-//     return true;
-//   }
-//   alert("You have entered an invalid email address!");
-//   return false;
-// }

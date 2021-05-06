@@ -1,3 +1,13 @@
+// <========    CONSTANTS     ========>
+const ERROR_STYLING_OBJECT = {
+  errorTextColor: "red",
+  errorBorderStyle: "0 0 10px red",
+  okTextColor: "green",
+  okBorderStyle: "0 0 10px green",
+};
+
+// <========    Global Scope     ========>
+
 const registerSubmitButton = document.getElementById("registerSubmitButton");
 const email = document.getElementById("email-address");
 const phone = document.getElementById("phone");
@@ -8,6 +18,13 @@ const lastName = document.getElementById("last-name");
 const address = document.getElementById("address");
 const city = document.getElementById("city");
 const zipCode = document.getElementById("zip");
+
+const {
+  errorTextColor,
+  errorBorderStyle,
+  okTextColor,
+  okBorderStyle,
+} = ERROR_STYLING_OBJECT;
 
 registerSubmitButton.addEventListener("click", (e) => {
   const emailPattern = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -40,108 +57,100 @@ registerSubmitButton.addEventListener("click", (e) => {
 
   emailPattern.test(email.value)
     ? ((emailErrorMessage.textContent = ""),
-      (email.style.boxShadow = "0 0 10px green"),
-      email.reportValidity(),
+      (email.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((emailErrorMessage.style.color = "red"),
+    : ((emailErrorMessage.style.color = errorTextColor),
       (emailErrorMessage.textContent =
         "Your email must be in a correct form (abc#def@mail.com)!"),
-      (email.style.boxShadow = "0 0 10px red"),
+      (email.style.boxShadow = errorBorderStyle),
       email.reportValidity(),
       e.preventDefault());
 
   //phone
   phoneNumberPattern.test(phone.value)
     ? ((phoneErrorMessage.textContent = ""),
-      (phone.style.boxShadow = "0 0 10px green"))
-    : ((phoneErrorMessage.style.color = "red"),
+      (phone.style.boxShadow = okBorderStyle))
+    : ((phoneErrorMessage.style.color = errorTextColor),
       (phoneErrorMessage.textContent =
         "Your phone number must be from 9 to 11 and contain number only!"),
-      (phone.style.boxShadow = "0 0 10px red"));
+      (phone.style.boxShadow = errorBorderStyle));
 
   //password
   passwordPattern.test(password.value)
     ? ((passwordErrorMessage.textContent = ""),
-      (password.style.boxShadow = "0 0 10px green"),
-      e.preventDefault(),
-      password.reportValidity())
-    : ((passwordErrorMessage.style.color = "red"),
+      (password.style.boxShadow = okBorderStyle),
+      e.preventDefault())
+    : ((passwordErrorMessage.style.color = errorTextColor),
       (passwordErrorMessage.textContent =
         "Your password must contains 8 to 20 characters, no space, at least 1 lower case, 1 upper case letter, at least 1 digit, and at least 1 special character (!@#$%^&*)!"),
-      (password.style.boxShadow = "0 0 10px red"),
+      (password.style.boxShadow = errorBorderStyle),
       password.reportValidity(),
       e.preventDefault());
 
   //retype-password
   password.value === retypePassword.value
     ? ((retypePasswordErrorMessage.textContent = ""),
-      (retypePassword.style.boxShadow = "0 0 10px green"),
+      (retypePassword.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((retypePasswordErrorMessage.style.color = "red"),
+    : ((retypePasswordErrorMessage.style.color = errorTextColor),
       (retypePasswordErrorMessage.textContent =
         "Your password does not match!"),
-      (retypePassword.style.boxShadow = "0 0 10px red"),
-      retypePassword.reportValidity(),
+      (retypePassword.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 
   //first-name
 
   namePattern.test(firstName.value)
     ? ((firstNameErrorMessage.textContent = ""),
-      (firstName.style.boxShadow = "0 0 10px green"),
+      (firstName.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((firstNameErrorMessage.style.color = "red"),
+    : ((firstNameErrorMessage.style.color = errorTextColor),
       (firstNameErrorMessage.textContent =
         "Your first name must exceed 3 characters and contain letters only!"),
-      (firstName.style.boxShadow = "0 0 10px red"),
-      firstName.reportValidity(),
+      (firstName.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 
   //last-name
   namePattern.test(lastName.value)
     ? ((lastNameErrorMessage.textContent = ""),
-      (lastName.style.boxShadow = "0 0 10px green"),
+      (lastName.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((lastNameErrorMessage.style.color = "red"),
+    : ((lastNameErrorMessage.style.color = errorTextColor),
       (lastNameErrorMessage.textContent =
         "Your last name must exceed 3 characters and contain letters only!"),
-      (lastName.style.boxShadow = "0 0 10px red"),
-      lastName.reportValidity(),
+      (lastName.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 
   //Address
   adddressPattern.test(address.value)
     ? ((addressErrorMessage.textContent = ""),
-      (address.style.boxShadow = "0 0 10px green"),
+      (address.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((addressErrorMessage.style.color = "red"),
+    : ((addressErrorMessage.style.color = errorTextColor),
       (addressErrorMessage.textContent =
         "Your address must exceed 3 characters and contain letters only!"),
-      (address.style.boxShadow = "0 0 10px red"),
-      address.reportValidity(),
+      (address.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 
   //City
   cityPattern.test(city.value)
     ? ((cityErrorMessage.textContent = ""),
-      (city.style.boxShadow = "0 0 10px green"),
+      (city.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((cityErrorMessage.style.color = "red"),
+    : ((cityErrorMessage.style.color = errorTextColor),
       (cityErrorMessage.textContent =
         "Your city must exceed 3 characters and contain letters only!"),
-      (city.style.boxShadow = "0 0 10px red"),
-      city.reportValidity(),
+      (city.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 
   //ZipCode
   zipCodePattern.test(zipCode.value)
     ? ((zipErrorMessage.textContent = ""),
-      (zipCode.style.boxShadow = "0 0 10px green"),
+      (zipCode.style.boxShadow = okBorderStyle),
       e.preventDefault())
-    : ((zipErrorMessage.style.color = "red"),
+    : ((zipErrorMessage.style.color = errorTextColor),
       (zipErrorMessage.textContent =
-        "Your ZipCode must contains 4 to 6digits!"),
-      (zipCode.style.boxShadow = "0 0 10px red"),
-      zipCode.reportValidity(),
+        "Your ZipCode must contains 4 to 6 digits!"),
+      (zipCode.style.boxShadow = errorBorderStyle),
       e.preventDefault());
 });
