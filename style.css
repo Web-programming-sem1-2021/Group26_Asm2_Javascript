@@ -447,66 +447,6 @@ details summary::-webkit-details-marker {
   }
 }
 
-/*--------------- store sections carousels ---------------- */
-/* -------------------------------------------------------- */
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  margin: 0 auto 0 auto;
-  width: 90vw;
-  height: fit-content;
-  border: solid #7daeee 0.5px;
-  background-color: var(--store-slider-bg-color);
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-  -webkit-overflow-scrolling: auto;
-}
-
-.item {
-  min-width: 300px;
-  height: 300px;
-  margin: 15px;
-  font-size: 5em;
-  text-align: center;
-  background-color: #fff9ef;
-  border-radius: 7px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  display: inline-table;
-  position: static;
-  width: 40%;
-  transition: 0.3s;
-}
-
-.item:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-.container {
-  padding: 0;
-  font-size: small;
-  margin: 10px;
-  display: block;
-  justify-content: space-around;
-}
-
-.carousel .item .card-image {
-  display: flex;
-  width: 120px;
-  height: 200px;
-}
-
-/* Section tile */
-
-.store-title {
-  text-align: center;
-  color: var(--nav-text-color);
-  padding: 15px;
-}
-
 /* Section dividers */
 
 hr.dashed {
