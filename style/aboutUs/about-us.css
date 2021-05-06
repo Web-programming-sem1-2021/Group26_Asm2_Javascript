@@ -109,6 +109,11 @@ img {
   border-radius: 10px;
   overflow-y: scroll;
 }
+@media screen and (max-width: 500px) {
+  .modal-content {
+    width: 80%;
+    height: 80%; margin: 20% auto auto;
+  }
 
 .modal-header {
   font-weight: 500;
