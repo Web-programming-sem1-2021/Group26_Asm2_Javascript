@@ -74,13 +74,9 @@ let timer = setInterval(autoPlayMainSlider, 3000);
 
 const thumbnails = Array.from(document.getElementsByClassName("thumbnail"));
 const sliders = Array.from(document.getElementsByClassName("slider"));
-console.log(sliders[0]);
 const buttonRight1 = document.getElementById("slide-right-1");
-console.log(`buttonRight`, buttonRight1);
 const buttonLeft1 = document.getElementById("slide-left-1");
-
 const buttonRight2 = document.getElementById("slide-right-1");
-console.log(`buttonRight`, buttonRight2);
 const buttonLeft2 = document.getElementById("slide-left-1");
 
 buttonLeft1.addEventListener("click", () => (sliders[0].scrollLeft -= 125));
@@ -96,14 +92,13 @@ const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert("Left Scroll:" + slider.scrollLeft);
 
 //AUTO PLAY THE SLIDER
-function autoPlay() {
-  sliders.forEach((slider) =>
+const autoPlay = () => {
+  sliders.forEach((slider, index) =>
     slider.scrollLeft > maxScrollLeft - 1
       ? (slider.scrollLeft -= maxScrollLeft)
       : (slider.scrollLeft += 1)
   );
-}
-console.log(`autoPlay()`, autoPlay());
+};
 let play = setInterval(autoPlay, 40);
 
 // PAUSE THE SLIDE ON HOVER
