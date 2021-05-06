@@ -37,10 +37,7 @@ registerSubmitButton.addEventListener("click", (e) => {
   const zipErrorMessage = document.getElementById("zip-error-message");
 
   //email
-  console.log(
-    "emailPattern.test(email.value) :>> ",
-    emailPattern.test(email.value)
-  );
+
   emailPattern.test(email.value)
     ? ((emailErrorMessage.textContent = ""),
       (email.style.boxShadow = "0 0 10px green"),
@@ -54,10 +51,6 @@ registerSubmitButton.addEventListener("click", (e) => {
       e.preventDefault());
 
   //phone
-  console.log(
-    " phoneNumberPattern.test(phone.value) :>> ",
-    phoneNumberPattern.test(phone.value)
-  );
   phoneNumberPattern.test(phone.value)
     ? ((phoneErrorMessage.textContent = ""),
       (phone.style.boxShadow = "0 0 10px green"))

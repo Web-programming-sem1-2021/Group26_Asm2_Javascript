@@ -2,14 +2,8 @@ const loginForm = document.getElementsByClassName("login-form");
 const loginSubmitButton = document.getElementById("login-submit");
 const userName = document.getElementById("usrname");
 const password = document.getElementById("passcode");
-console.log(`loginSubmitButton`, loginSubmitButton);
 
 localStorage.setItem("password", "password");
-
-console.log(
-  `localStorage.getItem("password")`,
-  localStorage.getItem("password")
-);
 
 const handleWrongPassword = () => {
   const wrongPasswordStyle = {

@@ -24,11 +24,8 @@ const validate = () =>
         (checkbox) => (checkbox.style.boxShadow = "0 0 10px red !important")
       ),
       (checkboxErrorMessage.style.color = "red"),
-      (checkboxErrorMessage.textContent = "Check atleast 1 checkbox!"),
-      console.log("hahaahaa :>> ", validateCheckboxes()))
+      (checkboxErrorMessage.textContent = "Check atleast 1 checkbox!"))
     : (checkboxErrorMessage.textContent = "");
-
-console.log("scheduleCheckboxes :>> ", scheduleCheckboxes);
 
 //Contact
 contactSubmitButton.addEventListener("click", (e) => {
@@ -36,25 +33,6 @@ contactSubmitButton.addEventListener("click", (e) => {
   const namePattern = /[A-Za-z]{3,}/;
   const phoneNumberPattern = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/im;
   const emailPattern = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-  // userName.setCustomValidity("");
-  // phone.setCustomValidity("");
-
-  // // const numberRegex=
-  // const checkIfNameHasNumber = () =>
-  //   Array.from(userName.value).forEach((item) => {
-  //     isNaN(parseInt(item))? true
-  //   });
-  // console.log(
-  //   "(userName.innerHTML :>> ",
-  //   Array.from(userName.value).forEach((item) =>
-  //     typeof parseInt(item) === Number ? true : false
-  //   )
-  // );
-  // console.log(
-  //   "    Array.from(userName).map((item) => (isNaN(item) ?) :>> ",
-  //   checkIfNameHasNumber
-  // );
 
   //Name
   const nameErrorMessage = document.getElementById("name-error-message");
@@ -69,7 +47,6 @@ contactSubmitButton.addEventListener("click", (e) => {
         "Your name must exceed 3 characters and contain letters only!"),
       (userName.style.boxShadow = "0 0 10px red"));
   //E-mail
-  console.log(emailPattern.test(email.value));
   emailPattern.test(email.value)
     ? ((emailErrorMEssage.textContent = ""),
       (email.style.boxShadow = "0 0 10px green"))
@@ -78,10 +55,7 @@ contactSubmitButton.addEventListener("click", (e) => {
         "Your email must be in a correct form (abc#def@mail.com)!"),
       (email.style.boxShadow = "0 0 10px red"));
   //Phone number
-  console.log(
-    " phoneNumberPattern.test(phone.value) :>> ",
-    phoneNumberPattern.test(phone.value)
-  );
+
   phoneNumberPattern.test(phone.value)
     ? (phone.style.boxShadow = "0 0 10px green")
     : ((phoneErrorMessage.style.color = "red"),
@@ -98,17 +72,19 @@ const message = document.getElementById("counter-message");
 const input = document.querySelector("textarea");
 input.addEventListener("input", updateValue);
 function updateValue(e) {
-  
   let currentCharacters = e.target.value.length + 1;
   let wordLeft50 = 50 - currentCharacters; //0 - 50
   let wordLeft500 = 500 - currentCharacters; // 50 - 500
   let wordOver = currentCharacters - 500; //500 -
   if (!currentCharacters == 0) {
     wordLeft50 <= 50 && wordLeft50 > 1
-      ? (message.style.color = "red",message.textContent = `${wordLeft50} is needed to reach the required character number!`)
+      ? ((message.style.color = "red"),
+        (message.textContent = `${wordLeft50} is needed to reach the required character number!`))
       : wordLeft500 <= 500 && wordLeft500 > 0
-      ? (message.style.color = "green",message.textContent = `You can text ${wordLeft500} more letters!`)
-      : (message.style.color = "red",message.textContent = `Deleting ${wordOver} letters is needed!`);
+      ? ((message.style.color = "green"),
+        (message.textContent = `You can text ${wordLeft500} more letters!`))
+      : ((message.style.color = "red"),
+        (message.textContent = `Deleting ${wordOver} letters is needed!`));
   }
 }
 

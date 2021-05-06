@@ -9,13 +9,6 @@ function handleResponsiveNavBar() {
 
 const myAccount = document.getElementById("nav-bar-acount");
 
-console.log(`myAccount`, myAccount);
-
-console.log(
-  `localStorage.getItem('password')`,
-  localStorage.getItem("password")
-);
-
 myAccount.addEventListener("click", (e) => {
   e.preventDefault();
   if (
