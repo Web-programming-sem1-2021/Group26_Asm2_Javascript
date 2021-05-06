@@ -30,7 +30,7 @@ p {
   line-height: 1.5;
 }
 
-.container1 {
+.slider {
   max-width: 90%;
   margin: 0 auto;
   /* padding: 0 20px; */
@@ -51,8 +51,9 @@ h1 {
   margin: 0 auto;
 }
 
-.arrow {
-  width: 2rem;
+.slide-left,
+.slide-right {
+  width: 3rem;
   margin: 0 1rem;
 }
 
