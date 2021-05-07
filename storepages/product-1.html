@@ -15,12 +15,14 @@
     <link
       rel="stylesheet"
       href="./style2.css"/>
-    <script src="../script/cart.js" ></script>
+    <script src="../script/cart.js" async></script>
       
 
 </head>
 
 <body>
+
+
 
   <div class="nav" id="navbar" style="position: sticky; top: 0px">
     <a href="../index.html" class="homeIcon">
@@ -124,26 +126,25 @@
     </div>
 
   <!-- MIDDLE -->
-  <div class="middle">
+  <div class="middle" name="shop-item">
     <div class="middle-left">
-        <img class='middle-left' src='./images/Jacket/jacket1.jpeg'>
+        <img class='shop-item-image' src='./images/Jacket/jacket1.jpeg'>
     </div>
 
 
     <div class="middle-right">
 
         <div class="middle-right-1"></div>
-  <form action="Basket.html" method="POST">
-        <div class="middle-right-2" "><p id="productName">LINEN WORKER JACKET</p></form>
-        </div>
-
+      
+        <div class="middle-right-2" "><p class="shop-item-title">LINEN WORKER JACKET</p></div>
+ 
         <div class="middle-right-3">
-            <p class="Scription">LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH </p>
+            <p class="shop-item-description">LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH </p>
             
         </div>
 
         <div class="middle-right-4">
-            <p><strong>$100.99</strong></p>
+            <p class="shop-item-price"><strong>$100.99</strong></p>
         </div>
 
         <div class="middle-right-4">
@@ -189,7 +190,7 @@
             <button class="button-product" type="submit">Buy now</button>
             <a href="./pop-up.html"
              onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;">
-             <button class="button-product" onclick="" type="submit"> Add to basket</button></a>
+             <button class="button-product" name="addToCartButton" onclick="" type="submit"> Add to basket</button></a>
 
 
 
@@ -215,7 +216,7 @@
   <div class="product-detail" style="width: 100%;">
     <h1><b>RECOMMENDED PRODUCTS</b></h1></div>
 
-  <div class="item">
+  <div class="recommended-item">
     <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
     <img
       src="./images/Jacket/jacket1.jpeg"
@@ -232,7 +233,7 @@
   </a>
 </div>
 
-<div class="item">
+<div class="recommended-item">
   <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
   <img
     src="./images/Jacket/jacket2.jpeg"
@@ -248,7 +249,7 @@
 
 </a>
 </div>
-<div class="item">
+<div class="recommended-item">
   <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
   <img
     src="./images/Jacket/jacket3.jpeg"
@@ -264,7 +265,7 @@
 </div>
 
 
-<div class="item">
+<div class="recommended-item">
   <a href="./product-3.html" style="display: block; width: 100%; height: 100%;">
   <img
     src="./images/Jacket/jacket4.jpeg"

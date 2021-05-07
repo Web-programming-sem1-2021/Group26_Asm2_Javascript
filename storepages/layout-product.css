@@ -276,7 +276,7 @@ body {
   text-decoration: underline;
 }
 
-.item {
+.recommended-item {
   float: left;
   margin: 10px;
   min-width: 300px;
@@ -291,7 +291,7 @@ body {
   width: 250px;
   transition: 0.3s;
 }
-.item:hover {
+.recommended-item:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 

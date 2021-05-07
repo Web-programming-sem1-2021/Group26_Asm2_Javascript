@@ -1,41 +1,78 @@
-//TODO: Jeong-hyoen
-
 //TODO: Jeong-hyeon
-var inc = document.getElementsByClassName("stepper");
-for (i = 0; i < inc.length; i++) {
-  var incI = inc[i].querySelector("input"),
-    id = incI.getAttribute("id"),
-    min = incI.getAttribute("min"),
-    max = incI.getAttribute("max"),
-    step = incI.getAttribute("step");
-  document
-    .getElementById(id)
-    .previousElementSibling.setAttribute(
-      "onclick",
-      "stepperInput('" + id + "', -" + step + ", " + min + ")"
-    ); 
-  document
-    .getElementById(id)
-    .nextElementSibling.setAttribute(
-      "onclick",
-      "stepperInput('" + id + "', " + step + ", " + max + ")"
-    ); 
-}
 
-function stepperInput(id, s, m) {
-  var el = document.getElementById(id);
-  if (s > 0) {
-    if (parseInt(el.value) < m) {
-      el.value = parseInt(el.value) + s;
+
+  if (document.readyState == 'loading'){
+    document.addEventListener('DOMContentLoaded',ready)
+  } else{
+    ready()
+  }
+  
+  function ready(){
+        var removeProduct = document.getElementsByClassName('delete')
+        console.log(removeProduct)
+        for (var i = 0; i<removeProduct.length; i++){
+          var button = removeProduct[i]
+          button.addEventListener('click', removeCartItem) 
     }
-  } else {
-    if (parseInt(el.value) > m) {
-      el.value = parseInt(el.value) + s;
-    }
+  
+    var quantityInputs= document.getElementsByClassName('quantity-input')
+    for (var i=0; i<quantityInputs.length; i++){
+      var input = quantityInputs[i]
+      input.addEventListener('change',quantityChanged)
+  }
+    var addToCartButtons = document.getElementsByName("addToCartButton")
+        for (var i=0; i<addToCartButtons.length; i++){
+          var button = addToCartButtons[i]
+          button.addEventListener('click',addToCartClicked)
   }
 }
+ 
+  function removeCartItem() {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.remove()
+    updateCartTotal()
+  }
+  
+  function quantityChanged(event) {
+    var input = event.target
+    if (isNaN(input.value) || input.value <= 0) {
+      input.value=1
+    }
+    updateCartTotal()
+  }
 
-function changeColor(newColor) {
-  var elem = document.getElementById('productName');
-  elem.style.color = newColor;
-}
+  // function addToCartClicked(event){
+  //   var button = event.target
+  //   var shopItem = button.parentElement.parentElement.parentElement
+  //   var title = shopItem.getElementsByClassName("shop-item-title")[0].innerText
+  //   var price = shopItem.getElementsByClassName("shop-item-price")[0].innerText
+  //   var imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src
+  //   console.log(title,price,imageSrc)
+  //   addItemToCart(title, price, imageSrc)
+  // }
+
+  // function addItemToCart(title, price, imageSrc){
+  //   var cartRow = document.createElement('div')
+  //   cartRow.classList.add('cart-row')
+  //   var cartItems = document.getElementsByName("cart-items")[0]
+  //   var cartRowContents = "<div class='item'><div class='product_image'><img src='https://cdn.shopify.com/s/files/1/0046/6272/products/japanes-pocket-square-shambre_medium.jpg?7105' /></div><div class='description'><h1>Hand Sewing Pocket Square</H1><h2>Out of Stock - Ships in 1-3 Weeks</h2><h3 class='delete'>Delete</h3><h3 class='save'>Save</h3></div><div class='product_quantity'><div class='quantity_button'><span class='stepper'><input class='quantity-input' type='number' value='1'></span></div></div><div class='price'>$46.95</div>	</div>"
+  //   cartRow.innerHTML=cartRowContents
+  //   cartItems.append(cartRow)
+  // }
+  
+function updateCartTotal(){
+    var cartItemContainer = document.getElementsByClassName('cart')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+      for (var i=0; i<cartRows.length; i++){
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('price')[0]
+        var quantityElement = cartRow.getElementsByClassName('quantity-input')[0]
+        var quantity = quantityElement.value
+        var price = parseFloat(priceElement.innerText.replace('$',''))
+        total = total + price * quantity
+      }
+      total = Math.round(total*100) / 100
+      document.getElementsByClassName('totalPrice')[0].innerText = '$' + total
+    }
+  
