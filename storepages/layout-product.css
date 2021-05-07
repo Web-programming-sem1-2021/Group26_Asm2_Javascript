@@ -47,9 +47,6 @@
   height: auto;
   max-width: 610px;
 }
-.shop-item-image{
-  max-width: 610px;
-}
 .middle-right {
   position: absolute;
   top: 0px;
@@ -313,3 +310,4 @@ body {
   display: block;
   justify-content: space-around;
 }
+
