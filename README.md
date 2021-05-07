@@ -1,19 +1,18 @@
-
-# Group26_Asm2_Javascript #
+# Group26_Asm2_Javascript
 
 This is the root repository for Assignment 2 of Web Programming course(COSC2430) semester 1/2021. It is owned by course group 26.
 
 ---
 
-## [GitHub Repository](https://github.com/Web-programming-sem1-2021/Group26_Asm2_Javascript) ##
+## [GitHub Repository](https://github.com/Web-programming-sem1-2021/Group26_Asm2_Javascript)
 
 ---
 
-## [Website](https://web-programming-sem1-2021.github.io/Group26_Asm2_Javascript) ##
+## [Website](https://web-programming-sem1-2021.github.io/Group26_Asm2_Javascript)
 
 ---
 
-## Students ##
+## Students
 
 1. Nguyen Thi Quynh Giang - s3866617
 2. Joo Jeong-hyeon - s3865746
@@ -22,22 +21,21 @@ This is the root repository for Assignment 2 of Web Programming course(COSC2430)
 
 ---
 
-## References ##
+## References
 
 Project is created with:
 
-* WebDev Simplified Youtube Chanel:
-  * [Build a Popup With JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw)
-  * [Shoping Cart](https://www.youtube.com/watch?v=YeFzkC2awTM&t=2091s&pp=qAMBugMGCgJ2aRAB)
-* Ipsum version: 2.33
-* Ament library version: 999
-
+- WebDev Simplified Youtube Chanel:
+  - [Build a Popup With JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw)
+  - [Shoping Cart](https://www.youtube.com/watch?v=YeFzkC2awTM&t=2091s&pp=qAMBugMGCgJ2aRAB)
+- Ipsum version: 2.33
+- Ament library version: 999
 
 ---
 
-## Project Tree ##
+## Project Tree
 
-``` English
+```English
 Group26_Asm2_Javascript
 ├─ .gitignore
 ├─ .vscode
