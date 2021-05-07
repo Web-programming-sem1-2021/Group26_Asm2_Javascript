@@ -21,7 +21,9 @@ This is the root repository for Assignment 2 of Web Programming course(COSC2430)
 4. Ramanaharan Ramcharan - s3775271
 
 ---
+
 ## References ##
+
 Project is created with:
 
 * WebDev Simplified Youtube Chanel:
