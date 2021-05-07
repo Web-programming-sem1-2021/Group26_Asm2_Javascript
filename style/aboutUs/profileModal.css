@@ -168,8 +168,8 @@ address {
 .about {
   text-align: center;
   border-bottom: 2px dashed #ededed;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 .name {
   text-transform: uppercase;
@@ -274,7 +274,7 @@ address {
 
 @media (max-width: 1024px) {
   .popup-container {
-    width: 90%;
+    width: 100%;
   }
 }
 @media (max-width: 992px) {
@@ -350,6 +350,7 @@ address {
   }
   .popup-container {
     min-width: 320px;
+    
   }
   .name {
     letter-spacing: normal;
