@@ -9,7 +9,6 @@
   
   function ready(){
         var removeProduct = document.getElementsByClassName('delete')
-        console.log(removeProduct)
         for (var i = 0; i<removeProduct.length; i++){
           var button = removeProduct[i]
           button.addEventListener('click', removeCartItem) 
@@ -41,24 +40,38 @@
     updateCartTotal()
   }
 
-  // function addToCartClicked(event){
-  //   var button = event.target
-  //   var shopItem = button.parentElement.parentElement.parentElement
-  //   var title = shopItem.getElementsByClassName("shop-item-title")[0].innerText
-  //   var price = shopItem.getElementsByClassName("shop-item-price")[0].innerText
-  //   var imageSrc = shopItem.getElementsByClassName("shop-item-image")[0].src
-  //   console.log(title,price,imageSrc)
-  //   addItemToCart(title, price, imageSrc)
-  // }
-
-  // function addItemToCart(title, price, imageSrc){
-  //   var cartRow = document.createElement('div')
-  //   cartRow.classList.add('cart-row')
-  //   var cartItems = document.getElementsByName("cart-items")[0]
-  //   var cartRowContents = "<div class='item'><div class='product_image'><img src='https://cdn.shopify.com/s/files/1/0046/6272/products/japanes-pocket-square-shambre_medium.jpg?7105' /></div><div class='description'><h1>Hand Sewing Pocket Square</H1><h2>Out of Stock - Ships in 1-3 Weeks</h2><h3 class='delete'>Delete</h3><h3 class='save'>Save</h3></div><div class='product_quantity'><div class='quantity_button'><span class='stepper'><input class='quantity-input' type='number' value='1'></span></div></div><div class='price'>$46.95</div>	</div>"
-  //   cartRow.innerHTML=cartRowContents
-  //   cartItems.append(cartRow)
-  // }
+  function addToCartClicked(event){
+    var button = event.target
+    var shopItem = button.parentElement.parentElement.parentElement
+    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+    console.log(title,price,imageSrc)
+    addItemToCart(title, price, imageSrc)
+  }
+  function getElements(){
+   var div = $('#cart-row')
+    $.get( "../storepages/product-1.html", function(response) {
+      for(var i = 0; i < data.length; i++){
+        div.append($(response));
+      }
+  
+    });
+  }
+  function addItemToCart(title, price, imageSrc){
+    var cartRow = document.createElement('div')
+    cartRow.classList.add('cart-row')
+    var cartItems = document.getElementsByClassName('cart-row')[0]
+    var cartRowContents = "<div class='item'><div class='product_image'><img src='${imageSrc}' /></div><div class='description'><h1 class='cart-title'>${title}</H1><h2>Out of Stock - Ships in 1-3 Weeks</h2><h3 class='delete'>Delete</h3><h3 class='save'>Save</h3></div><div class='product_quantity'><div class='quantity_button'><span class='stepper'><input class='quantity-input' type='number' value='1'></span></div></div><div class='price'>${price}</div>	</div>"
+    cartRow.innerHTML=cartRowContents
+    var div = $('#cart')
+    $.get( "../storepages/product-1.html", function(response) {
+      for(var i = 0; i < cartRow.length; i++){
+        div.append($(cartRow));
+      }
+  
+    });
+  }
   
 function updateCartTotal(){
     var cartItemContainer = document.getElementsByClassName('cart')[0]
