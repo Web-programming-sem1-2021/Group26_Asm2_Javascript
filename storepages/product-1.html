@@ -6,249 +6,222 @@
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      
     />
 
     <link rel="stylesheet" href="layout-product.js" />
     <link rel="stylesheet" type="text/css" href="layout-product.css" />
     <!-- <link rel="stylesheet" href="../style.css" /> -->
-    <link rel="stylesheet" href="./style2.css" />
-
+    <link rel="stylesheet" href="../style.css" />
 
     <script src="../jsFunctions.js" defer></script>
     <script src="../script/cart-main.js" defer></script>
     <title>product detail</title>
   </head>
   <body>
-      <div id="site">
-        <div class="nav" id="navbar">
-          <a href="../index.html" class="homeIcon">
-            <img src="../icons/ICONIC MALL.svg"
-          /></a>
-    
-          <a class="nav-section" href="../homepage/about-us.html">About Us</a>
-          <a class="nav-section" href="../homepage/fees.html">Fees</a>
-          <a
-            class="nav-section"
-            href="../homepage/myAccount/login.html"
-            id="nav-bar-account"
-            >Account</a
-          >
-    
-          <details class="dropdown">
-            <summary class="dropbtn">
-              Browse<i class="fa fa-caret-down"></i>
-            </summary>
-            <div onclick="" class="dropdown-content">
-              <a href="../homepage/browse/browse-stores-by-name.html"
-                >Browse Store <br />
-                by name</a
-              >
-              <a href="../homepage/browse/browse-stores-by-categories.html"
-                >Browse Store <br />by Categories</a
-              >
+    <div id="site">
+      <div class="nav" id="navbar">
+        <a href="../index.html" class="homeIcon">
+          <img src="../icons/ICONIC MALL.svg"
+        /></a>
+
+        <a class="nav-section" href="../homepage/about-us.html">About Us</a>
+        <a class="nav-section" href="../homepage/fees.html">Fees</a>
+        <a
+          class="nav-section"
+          href="../homepage/myAccount/login.html"
+          id="nav-bar-account"
+          >Account</a
+        >
+
+        <details class="dropdown">
+          <summary class="dropbtn">
+            Browse<i class="fa fa-caret-down"></i>
+          </summary>
+          <div onclick="" class="dropdown-content">
+            <a href="../homepage/browse/browse-stores-by-name.html"
+              >Browse Store <br />
+              by name</a
+            >
+            <a href="../homepage/browse/browse-stores-by-categories.html"
+              >Browse Store <br />by Categories</a
+            >
+          </div>
+        </details>
+        <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
+        <a class="nav-section" href="../homepage/contact.html">Contact</a>
+        <a
+          href="javascript:void(0);"
+          style="font-size: 15px"
+          class="icon"
+          onclick="handleResponsiveNavBar()"
+          >&#9776;</a
+        >
+      </div>
+    </div>
+
+    <main>
+      <div class="container-new">
+        <div class="on-top">
+          <button type="button" class="button-top">LOGIN</button>
+          <button type="button" class="button-top">MY PAGE</button>
+          <button type="button" class="button-top">
+            <a
+              href="../storepages/cart.html"
+              style="text-decoration: none; color: black"
+            >
+              MY BASKET <em style="color: red" id="basket-number"></em
+            ></a>
+          </button>
+        </div>
+        <!-- TOP -->
+        <div class="top">
+          <a href="../storepages/store-2.html">
+            <img src="./images/logo1.png" style="width: 500px" />
+          </a>
+        </div>
+
+        <!-- MIDDLE -->
+        <div id="content">
+          <div id="products"></div>
+          <div class="middle" name="shop-item" id="shop-item-detail">
+            <div class="middle-left">
+              <img class="shop-item-image" src="./images/Jacket/jacket1.jpeg" />
             </div>
-          </details>
-          <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
-          <a class="nav-section" href="../homepage/contact.html">Contact</a>
-          <a
-            href="javascript:void(0);"
-            style="font-size: 15px"
-            class="icon"
-            onclick="handleResponsiveNavBar()"
-            >&#9776;</a
-          >
-        </div>
-        </div>
 
-        <div class="container-new">
-          <div class="on-top">
-            <button type="button" class="button-top">LOGIN</button>
-            <button type="button" class="button-top">MY PAGE</button>
-            <button type="button" class="button-top">
-              <a
-                href="../storepages/cart.html"
-                style="text-decoration: none; color: black"
-              >
-                MY BASKET <em style="color: red;" id="basket-number"></em></a
-              >
-            </button>
-          </div>
-          <!-- TOP -->
-          <div class="top">
-            <a href="../storepages/store-2.html">
-              <img src="./images/logo1.png" style="width: 500px" />
-            </a>
-          </div>
+            <div class="middle-right" id="contents">
+              <div class="middle-right-1"></div>
 
-          <!-- MIDDLE -->
-          <div id="content">
-            <div id="products"></div>
-            <div class="middle" name="shop-item" id="shop-item-detail">
-              <div class="middle-left">
-                <img
-                  class="shop-item-image"
-                  src="./images/Jacket/jacket1.jpeg"
-                />
-              </div>
+              <div class="middle-right-2" ">
+              <p class="shop-item-title">LINEN WORKER JACKET</p>
+            </div>
 
-              <div class="middle-right" id="contents">
-                <div class="middle-right-1"></div>
+            <div class="middle-right-3">
+              <p class="shop-item-description">
+                LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG
+                SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH
+              </p>
+            </div>
 
-                <div class="middle-right-2" ">
-                <p class="shop-item-title">LINEN WORKER JACKET</p>
-              </div>
+            <div class="middle-right-4">
+              <p class="shop-item-price"><strong>$100.99</strong></p>
+            </div>
 
-              <div class="middle-right-3">
-                <p class="shop-item-description">
-                  LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG
-                  SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH
-                </p>
-              </div>
-
-              <div class="middle-right-4">
-                <p class="shop-item-price"><strong>$100.99</strong></p>
-              </div>
-
-              <div class="middle-right-4">
-                <p>Color : Navy Blue | 7545/600</p>
-              </div>
-              <br />
-              <hr width="230px" />
-              <div class="middle-right-4">
-                <!-- <a
-                  href="./pop-up.html"
-                  onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;"
-                > -->
-                <button
+            <div class="middle-right-4">
+              <p>Color : Navy Blue | 7545/600</p>
+            </div>
+            <br />
+            <hr width="230px" />
+            <div class="middle-right-4">
+              <!-- <a
+                href="./pop-up.html"
+                onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;"
+              > -->
+              <button
                 class="button-product"
-                  class="add-cart"
-                  name="addToCartButton"
-                  onclick=""
-                  type="submit"
-                >
-                  Add to basket
-                </button>
+                class="add-cart"
+                name="addToCartButton"
+                onclick=""
+                type="submit"
+              >
+                Add to basket
+              </button>
 
-                <button
-                  class="button-product"
-                  name="addToCartButton"
-                  onclick=""
-                  type="submit"
-                >
-                  Buy now
-                </button>
+              <button
+                class="button-product"
+                name="addToCartButton"
+                onclick=""
+                type="submit"
+              >
+                Buy now
+              </button>
 
-                <div module="Product_BasketAdd"></div>
-              </div>
-
-              <table>
-                <tbody>
-                  <td class="quantity-button">Quantity</td>
-                  <td class="size-button">Select size</td>
-
-                  <tr>
-                    <td class="quantity-button">
-                      <div class="quantity-controller">
-                        <input
-                          class=""
-                          min="1"
-                          name=""
-                          value="1"
-                          type="number"
-                        />
-                      </div>
-                    </td>
-                    <td>
-                      <div class="size-button">
-                        <select name="select-size" id="select-size">
-                          <option value="free">Free</option>
-                        </select>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div module="Product_BasketAdd"></div>
             </div>
 
-            <button class="button-product" type="submit" id="buy-now">
-              Buy now
-            </button>
+            <table>
+              <tbody>
+                <td class="quantity-button">Quantity</td>
+                <td class="size-button">Select size</td>
+
+                <tr>
+                  <td class="quantity-button">
+                    <div class="quantity-controller">
+                      <input class="" min="1" name="" value="1" type="number" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="size-button">
+                      <select name="select-size" id="select-size">
+                        <option value="free">Free</option>
+                      </select>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-
-      <!--bottom-->
-      <div class="bottom">
-        <div class="product-detail" style="width: 100%">
-          <h1><b>RECOMMENDED PRODUCTS</b></h1>
-        </div>
-
-        <div class="recommended-item" style="  margin-left:300px;">
-          <a
-            href="./product-1.html"
-            style="display: block; width: 100%; height: 100%"
-          >
-            <img src="./images/Jacket/jacket1.jpeg" class="product_image" />
-
-            <div
-              class="product-detail"
-              style="text-align: center; color: black"
-            >
-              <h4><b>FABRIC BOMBER JACKET</b></h4>
-              <p>$100.99</p>
-            </div>
-          </a>
-        </div>
-        <div class="recommended-item">
-          <a
-            href="./product-1.html"
-            style="display: block; width: 100%; height: 100%"
-          >
-            <img src="./images/Jacket/jacket2.jpeg" class="product_image" />
-
-            <div
-              class="product-detail"
-              style="text-align: center; color: black"
-            >
-              <h4><b>FABRIC BOMBER JACKET</b></h4>
-              <p>$100.99</p>
-            </div>
-          </a>
-        </div>
-        <div class="recommended-item">
-          <a
-            href="./product-1.html"
-            style="display: block; width: 100%; height: 100%"
-          >
-            <img src="./images/Jacket/jacket3.jpeg" class="product_image" />
-
-            <div
-              class="product-detail"
-              style="text-align: center; color: black"
-            >
-              <h4><b>FABRIC BOMBER JACKET</b></h4>
-              <p>$100.99</p>
-            </div>
-          </a>
-        </div> <div class="recommended-item">
-          <a
-            href="./product-1.html"
-            style="display: block; width: 100%; height: 100%"
-          >
-            <img src="./images/Jacket/jacket4.jpeg" class="product_image" />
-
-            <div
-              class="product-detail"
-              style="text-align: center; color: black"
-            >
-              <h4><b>FABRIC BOMBER JACKET</b></h4>
-              <p>$100.99</p>
-            </div>
-          </a>
-        </div> 
+    </main>
+    <!--bottom-->
+    <!-- <div class="bottom">
+      <div class="product-detail" style="width: 100%">
+        <h1><b>RECOMMENDED PRODUCTS</b></h1>
       </div>
-    </body>
+
+      <div class="recommended-item" >
+        <a
+          href="./product-1.html"
+          style="display: block; width: 100%; height: 100%"
+        >
+          <img src="./images/Jacket/jacket1.jpeg" class="product_image" />
+
+          <div class="product-detail" style="text-align: center; color: black">
+            <h4><b>FABRIC BOMBER JACKET</b></h4>
+            <p>$100.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="recommended-item">
+        <a
+          href="./product-1.html"
+          style="display: block; width: 100%; height: 100%"
+        >
+          <img src="./images/Jacket/jacket2.jpeg" class="product_image" />
+
+          <div class="product-detail" style="text-align: center; color: black">
+            <h4><b>FABRIC BOMBER JACKET</b></h4>
+            <p>$100.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="recommended-item">
+        <a
+          href="./product-1.html"
+          style="display: block; width: 100%; height: 100%"
+        >
+          <img src="./images/Jacket/jacket3.jpeg" class="product_image" />
+
+          <div class="product-detail" style="text-align: center; color: black">
+            <h4><b>FABRIC BOMBER JACKET</b></h4>
+            <p>$100.99</p>
+          </div>
+        </a>
+      </div>
+      <div class="recommended-item">
+        <a
+          href="./product-1.html"
+          style="display: block; width: 100%; height: 100%"
+        >
+          <img src="./images/Jacket/jacket4.jpeg" class="product_image" />
+
+          <div class="product-detail" style="text-align: center; color: black">
+            <h4><b>FABRIC BOMBER JACKET</b></h4>
+            <p>$100.99</p>
+          </div>
+        </a>
+      </div>
+    </div> -->
 
     <footer>
       <div class="footer">
