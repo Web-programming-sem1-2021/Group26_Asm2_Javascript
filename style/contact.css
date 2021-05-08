@@ -5,6 +5,12 @@ section {
   padding: 5rem 10px;
   background-position: center center;
 }
+
+@media screen and (max-width: 500px) {
+  .contact .form-box{
+    width: 90% !important;
+  }
+}
 .form-box {
   width: 60%;
   margin: 0 auto;

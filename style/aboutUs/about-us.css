@@ -4,10 +4,10 @@
 
 section {
   background-color: #ffffff;
-  margin-bottom: 24px;
   min-height: 320px;
   padding-left: 24px;
   padding-right: 24px;
+  margin: 50px auto 50px auto;
 }
 
 img.small1 {
@@ -22,6 +22,10 @@ img.small2 {
   height: 200px;
   margin-bottom: 24px;
   margin-left: 24px;
+}
+
+img.small2:hover, img.small1:hover{
+  background: gray;
 }
 @media screen and (max-width: 426px) {
   img.small1,

@@ -6,6 +6,7 @@
   --nav-color: #cec8ef;
   --nav-text-color: rgb(80, 78, 78);
   --nav-hover-color: rgb(119, 119, 119);
+  --darker-theme-color: #7868e6;
 }
 
 * {
@@ -115,18 +116,18 @@ details {
 }
 
 .nav a.icon:hover {
-  background-color: var(--nav-hover-color);
+  background-color: var(--darker-theme-color);
 }
 .nav .nav-section:hover,
 .nav .nav-section:active,
 .dropdown:hover .dropbtn {
-  background-color: var(--nav-hover-color);
+  background-color: var(--darker-theme-color);
   color: white;
   letter-spacing: 5px;
 }
 
 .dropdown-content a:hover {
-  background-color: var(--nav-hover-color);
+  background-color: var(--darker-theme-color);
   color: white;
   transition-delay: 0.1s;
 }
@@ -378,7 +379,7 @@ details {
   width: 40px;
   margin-top: -20px;
   color: #ffffff;
-  background-color: #cd2026;
+  background-color: var(--darker-theme-color);
   text-align: center;
   line-height: 40px;
   font-size: 20px;
