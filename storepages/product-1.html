@@ -6,33 +6,40 @@
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      
     />
+
     <link rel="stylesheet" href="layout-product.js" />
     <link rel="stylesheet" type="text/css" href="layout-product.css" />
+    <!-- <link rel="stylesheet" href="../style.css" /> -->
     <link rel="stylesheet" href="./style2.css" />
+
 
     <script src="../jsFunctions.js" defer></script>
     <script src="../script/cart-main.js" defer></script>
     <title>product detail</title>
   </head>
   <body>
-    <body>
       <div id="site">
-        <div class="nav" id="navbar" style="position: sticky; top: 0px">
+        <div class="nav" id="navbar">
           <a href="../index.html" class="homeIcon">
             <img src="../icons/ICONIC MALL.svg"
           /></a>
+    
           <a class="nav-section" href="../homepage/about-us.html">About Us</a>
           <a class="nav-section" href="../homepage/fees.html">Fees</a>
-          <a class="nav-section" href="../homepage/myAccount/login.html"
-           id="nav-bar-account" >Account</a
+          <a
+            class="nav-section"
+            href="../homepage/myAccount/login.html"
+            id="nav-bar-account"
+            >Account</a
           >
-          <div class="dropdown2">
-            <button class="dropbtn2">
-              Browse
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
+    
+          <details class="dropdown">
+            <summary class="dropbtn">
+              Browse<i class="fa fa-caret-down"></i>
+            </summary>
+            <div onclick="" class="dropdown-content">
               <a href="../homepage/browse/browse-stores-by-name.html"
                 >Browse Store <br />
                 by name</a
@@ -41,7 +48,7 @@
                 >Browse Store <br />by Categories</a
               >
             </div>
-          </div>
+          </details>
           <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
           <a class="nav-section" href="../homepage/contact.html">Contact</a>
           <a
@@ -52,8 +59,9 @@
             >&#9776;</a
           >
         </div>
+        </div>
 
-        <div class="container">
+        <div class="container-new">
           <div class="on-top">
             <button type="button" class="button-top">LOGIN</button>
             <button type="button" class="button-top">MY PAGE</button>
@@ -113,6 +121,7 @@
                   onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;"
                 > -->
                 <button
+                class="button-product"
                   class="add-cart"
                   name="addToCartButton"
                   onclick=""
@@ -175,6 +184,22 @@
           <h1><b>RECOMMENDED PRODUCTS</b></h1>
         </div>
 
+        <div class="recommended-item" style="  margin-left:300px;">
+          <a
+            href="./product-1.html"
+            style="display: block; width: 100%; height: 100%"
+          >
+            <img src="./images/Jacket/jacket1.jpeg" class="product_image" />
+
+            <div
+              class="product-detail"
+              style="text-align: center; color: black"
+            >
+              <h4><b>FABRIC BOMBER JACKET</b></h4>
+              <p>$100.99</p>
+            </div>
+          </a>
+        </div>
         <div class="recommended-item">
           <a
             href="./product-1.html"
@@ -196,7 +221,7 @@
             href="./product-1.html"
             style="display: block; width: 100%; height: 100%"
           >
-            <img src="./images/Jacket/jacket1.jpeg" class="product_image" />
+            <img src="./images/Jacket/jacket3.jpeg" class="product_image" />
 
             <div
               class="product-detail"
@@ -206,24 +231,9 @@
               <p>$100.99</p>
             </div>
           </a>
-        </div>
-        <div class="recommended-item">
+        </div> <div class="recommended-item">
           <a
             href="./product-1.html"
-            style="display: block; width: 100%; height: 100%"
-          >
-            <img src="./images/Jacket/jacket3.jpeg" class="product_image" />
-
-            <div class="product-detail" style="text-align: center; color:
-            black;"">
-            <h4><b>LEATHER BIKER JACKET</b></h4>
-            <p>$190.99</p>
-          </a>
-        </div>
-
-        <div class="recommended-item">
-          <a
-            href="./product-3.html"
             style="display: block; width: 100%; height: 100%"
           >
             <img src="./images/Jacket/jacket4.jpeg" class="product_image" />
@@ -232,11 +242,11 @@
               class="product-detail"
               style="text-align: center; color: black"
             >
-              <h4><b>BOMBER JACKET WITH POCKETS</b></h4>
-              <p>$79.99</p>
+              <h4><b>FABRIC BOMBER JACKET</b></h4>
+              <p>$100.99</p>
             </div>
           </a>
-        </div>
+        </div> 
       </div>
     </body>
 

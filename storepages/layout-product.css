@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
+.container-new {
   width: 1300px;
   margin: 0 auto;
   background-color: rgb(255, 255, 255);
@@ -81,12 +81,12 @@
 }
 
 .bottom {
-  margin-top: 500px;
+  margin-top: 600px;
   align-items: center;
   margin-bottom: 0px;
+
   width: 100%;
   height: 200px;
-  background-color: #ff0000;
   color: rgb(0, 0, 0);
 }
 
@@ -94,6 +94,7 @@
   margin-top: 10px;
   /* text-decoration: none; */
   float: left;
+  
   margin-right: 20px;
   color: #000000;
   width: 15%;
@@ -103,6 +104,7 @@
 .bottom-info-detail {
   color: #000000;
   width: 100%;
+  
   float: left;
   margin-top: 5px;
 }
@@ -276,7 +278,6 @@ body {
 }
 .recommended-items{
   display: inline-block;
-  background-color: pink;
   width: 90%;
   height: 500px;
 }
@@ -313,6 +314,5 @@ body {
   margin-top: 0%;
   display: block;
   justify-content: space-around;
-  background-color: blueviolet;
 }
 

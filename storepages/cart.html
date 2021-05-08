@@ -1,198 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Winery: Your Shopping Cart</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="basket.css" media="screen" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="../script/cart.js"></script>
-</head>
+  <head>
+    <title>Your Shopping Cart</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="basket.css" media="screen" type="text/css" />
+    <script type="text/javascript" src="../script/cart-main.js"></script>
 
-<body>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="basket.css" />
+    <script src="../jsFunctions.js" defer></script>
+  </head>
 
-<!-- <div id="site">
-	<header id="masthead">
-		<h1>Winery <span class="tagline">Wines for web developers since 1999</h1>
-	</header>
-	<div id="content">
-		<h1>Your Shopping Cart</h1>
-		<form id="shopping-cart" action="cart.html" method="post">
-			<table class="shopping-cart">
-			  <thead>
-				<tr>
-					<th scope="col">Item</th>
-					<th scope="col">Qty</th>
-					<th scope="col" colspan="2">Price</th>
-				</tr>
-			  </thead>
-			  <tbody>
-			  
-			  </tbody>
-			</table>
-			<p id="sub-total">
-				<strong>Sub Total</strong>: <span id="stotal"></span>
-			</p>
-			<ul id="shopping-cart-actions">
-				<li>
-					<input type="submit" name="update" id="update-cart" class="btn" value="Update Cart" />
-				</li>
-				<li>
-					<input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" />
-				</li>
-				<li>
-					<a href="store-2.html" class="btn">Continue Shopping</a>
-				</li>
-				<li>
-					<a href="checkout.html" class="btn">Go To Checkout</a>
-				</li>
-			</ul>
-		</form>
-	</div>
-	
-	
+  <body>
+    <div class="nav" id="navbar">
+      <a href="../index.html" class="homeIcon">
+        <img src="../icons/ICONIC MALL.svg"
+      /></a>
 
-</div> -->
+      <a class="nav-section" href="../homepage/about-us.html">About Us</a>
+      <a class="nav-section" href="../homepage/fees.html">Fees</a>
+      <a
+        class="nav-section"
+        href="../homepage/myAccount/login.html"
+        id="nav-bar-account"
+        >Account</a
+      >
 
- <div id = 'contents'>
-    <div id='cart' class="cart">
-
-
-        <div class='items'>
-             <h1>Shopping Cart</h1>
-             <div class='cart-items'>
-             <div class='cart-row'>
-                <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                <div class='description'>
-                    <h1>Brooks Canvas and Leather Backpack</H1>
-                    <h2>In Stock - Ships Immediately</h2>
-                    <h3 class='delete'>Delete</h3>
-                    <h3 class='save'>Save</h3>
-                </div>
-                <div class='product_quantity'>
-                    <div class='quantity_button'>
-                        <span class="stepper">
-                            <input class="quantity-input"type="number" value="1">
-                        </span>
-                    </div>
-                </div>
-                <div class='price'>$268.90</div>    
-            </div>
+      <details class="dropdown">
+        <summary class="dropbtn">
+          Browse<i class="fa fa-caret-down"></i>
+        </summary>
+        <div onclick="" class="dropdown-content">
+          <a href="../homepage/browse/browse-stores-by-name.html"
+            >Browse Store <br />
+            by name</a
+          >
+          <a href="../homepage/browse/browse-stores-by-categories.html"
+            >Browse Store <br />by Categories</a
+          >
         </div>
-
-   
-
-
-        <div class='cart-items'>
-            <div class='cart-row'>
-               <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-               <div class='description'>
-                   <h1>Brooks Canvas and Leather Backpack</H1>
-                   <h2>In Stock - Ships Immediately</h2>
-                   <h3 class='delete'>Delete</h3>
-                   <h3 class='save'>Save</h3>
-               </div>
-               <div class='product_quantity'>
-                   <div class='quantity_button'>
-                       <span class="stepper">
-                           <input class="quantity-input"type="number" value="1">
-                       </span>
-                   </div>
-               </div>
-               <div class='price'>$12.90</div>  
-           </div>
-       </div>
-
-       <div class='cart-items'>
-             <div class='cart-row'>
-                <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                <div class='description'>
-                    <h1>Brooks Canvas and Leather Backpack</H1>
-                    <h2>In Stock - Ships Immediately</h2>
-                    <h3 class='delete'>Delete</h3>
-                    <h3 class='save'>Save</h3>
-                </div>
-                <div class='product_quantity'>
-                    <div class='quantity_button'>
-                        <span class="stepper">
-                            <input class="quantity-input"type="number" value="1">
-                        </span>
-                    </div>
-                </div>
-                <div class='price'>$268.90</div>    
-            </div>
-        </div>
-
-
-                <h1>Saved Items</h1>
-
-                <div class='save'>
-                <ul>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-                <li>
-                    <div class='saved_item'>
-                        <div class='product_image'><img src='./images/Jacket/jacket1.jpeg' /></div>
-                        <div class='add_cart'>Add to Cart</div>
-                    </div>
-                </li>
-
-                </ul>
-                </div>
-
-
-
-
-
-            </div>
-                <div class='subTotal' id = 'sub-total'>
-                    <h1>Subtotal</h1>
-                    <h2>3 Items</h2>
-                    <h3 class="totalPrice" id='stotal'></h3>
-                    <h4>Shipping + Tax Included</h4>
-                    <div class='checkout'>
-                        Purchase
-                    </div>
-                    <form>
-                    <input type='checkbox' />This is a Gift
-                    </form>
-                </div>
-
-
-
-                
+      </details>
+      <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
+      <a class="nav-section" href="../homepage/contact.html">Contact</a>
+      <a
+        href="javascript:void(0);"
+        style="font-size: 15px"
+        class="icon"
+        onclick="handleResponsiveNavBar()"
+        >&#9776;</a
+      >
     </div>
-</div>
+
+    <div class="product-container">
+      <div class="product-header">
+        <h5 class="product-title">PRODUCT</h5>
+        <h5 class="price">PRICE</h5>
+        <h5 class="quantity">QUANTITY</h5>
+        <h5 class="total">TOTAL</h5>
+      </div>
+      <div class="products"></div>
+    </div>
+    
+  </body>
+</html>
 
 
 
-
-</body>
-</html>	
