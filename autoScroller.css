@@ -5,8 +5,8 @@
   --white: #fff;
   --black: #1c2b2d;
   --blue: #31326f;
-  --color-primary: #9d0191;
-  --color-sec: #db6400;
+  --darker-theme-color: #7868e6;
+  --color-sec: #D97A64;
   --color-grey: #eee;
   --color-dark-grey: #222831;
 }
@@ -40,7 +40,7 @@ h1 {
   font-size: 3rem;
   line-height: 2;
   text-align: center;
-  color: var(--color-primary);
+  color: var(--darker-theme-color);
 }
 
 .slide-container1 {
@@ -81,7 +81,7 @@ section::-webkit-scrollbar-track {
 }
 
 section::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary);
+  background-color: var(--darker-theme-color);
   outline: 1px solid #eee;
   /* border-radius: 100px; */
 }
@@ -135,5 +135,5 @@ section .thumbnail:hover {
 }
 
 .product-details a:hover {
-  background-color: var(--color-primary);
+  background-color: var(--darker-theme-color);
 }
