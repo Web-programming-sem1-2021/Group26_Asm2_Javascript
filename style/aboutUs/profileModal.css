@@ -158,8 +158,8 @@ address {
   font-size: 25px;
   font-weight: 400;
   border-bottom: 2px dashed #ededed;
-  padding-bottom: 30px;
-  margin-bottom: 37px;
+  padding-bottom: 20px;
+  margin-top: 70px;
 }
 .list {
   list-style: none;
