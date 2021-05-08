@@ -88,7 +88,7 @@ function updateValue(e) {
   let wordLeft500 = 500 - currentCharacters; // 50 - 500
   let wordOver = currentCharacters - 500; //500 -
   if (!currentCharacters == 0) {
-    wordLeft50 <= 50 && wordLeft50 > 1
+    wordLeft50 <= 50 && wordLeft50 > 0
       ? ((message.style.color = errorTextColor),
         (message.textContent = `${wordLeft50} is needed to reach the required character number!`))
       : wordLeft500 <= 500 && wordLeft500 > 0
