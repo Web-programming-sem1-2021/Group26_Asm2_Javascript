@@ -1,297 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="layout-product.css">
-  <link rel="stylesheet" href="layout-product.js">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     />
-    <link rel="icon" href="#" />
-    <title>Home</title>
-    <link
-      rel="stylesheet"
-      href="./style2.css"/>
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="../script/cart.js" async></script>
-      
+    <link rel="stylesheet" href="layout-product.js" />
+    <link rel="stylesheet" type="text/css" href="layout-product.css" />
+    <link rel="stylesheet" href="./style2.css" />
 
-</head>
-
-<body>
-  <div id="site">
-
-  <div class="nav" id="navbar" style="position: sticky; top: 0px">
-    <a href="../index.html" class="homeIcon">
-        <img src="../icons/ICONIC MALL.svg"></img></a
-      >
-    <a class="nav-section" href="../homepage/about-us.html">About Us</a>
-    <a class="nav-section" href="../homepage/fees.html">Fees</a>
-    <a class="nav-section" href="../homepage/myAccount/login.html">Account</a>
-    <div class="dropdown2">
-      <button class="dropbtn2">
-        Browse
-        <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-        <a href="../homepage/browse/browse-stores-by-name.html"
-          >Browse Store <br />
-          by name</a
-        >
-        <a href="../homepage/browse/browse-stores-by-categories.html"
-          >Browse Store <br />by Categories</a
-        >
-      </div>
-    </div>
-    <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
-    <a class="nav-section" href="../homepage/contact.html">Contact</a>
-    <a
-      href="javascript:void(0);"
-      style="font-size: 15px"
-      class="icon"
-      onclick="handleResponsiveNavBar()"
-      >&#9776;</a
-    >
-  </div>
-
-<div class="container">
-
-  <!-- TOP -->
-    <div class="top">
-                    <a href="../storepages/store-2.html">
-                        <img src="./images/logo1.png" style="width:500px;">
-                    </a>
-
-    </div>
-
-  <!-- MIDDLE -->
-  <div id="content">
-		<div id="products">
-    
-    </div>
-  <div class="middle" name="shop-item" id="shop-item-detail">
-    
-    <div class="middle-left">
-        <img class='shop-item-image' src='./images/Jacket/jacket1.jpeg'>
-    </div>
-
-
-    <div class="middle-right" id=contents>
-
-        <div class="middle-right-1"></div>
-      
-        <div class="middle-right-2" "><p class="shop-item-title">LINEN WORKER JACKET</p></div>
- 
-        <div class="middle-right-3">
-            <p class="shop-item-description">LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH </p>
-            
+    <script src="../jsFunctions.js" defer></script>
+    <script src="../script/cart-main.js" defer></script>
+    <title>product detail</title>
+  </head>
+  <body>
+    <body>
+      <div id="site">
+        <div class="nav" id="navbar" style="position: sticky; top: 0px">
+          <a href="../index.html" class="homeIcon">
+            <img src="../icons/ICONIC MALL.svg"
+          /></a>
+          <a class="nav-section" href="../homepage/about-us.html">About Us</a>
+          <a class="nav-section" href="../homepage/fees.html">Fees</a>
+          <a class="nav-section" href="../homepage/myAccount/login.html"
+           id="nav-bar-account" >Account</a
+          >
+          <div class="dropdown2">
+            <button class="dropbtn2">
+              Browse
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="../homepage/browse/browse-stores-by-name.html"
+                >Browse Store <br />
+                by name</a
+              >
+              <a href="../homepage/browse/browse-stores-by-categories.html"
+                >Browse Store <br />by Categories</a
+              >
+            </div>
+          </div>
+          <a class="nav-section" href="../homepage/faqs.html">FAQs</a>
+          <a class="nav-section" href="../homepage/contact.html">Contact</a>
+          <a
+            href="javascript:void(0);"
+            style="font-size: 15px"
+            class="icon"
+            onclick="handleResponsiveNavBar()"
+            >&#9776;</a
+          >
         </div>
 
-        <div class="middle-right-4">
-            <p class="shop-item-price"><strong>$100.99</strong></p>
-        </div>
+        <div class="container">
+          <div class="on-top">
+            <button type="button" class="button-top">LOGIN</button>
+            <button type="button" class="button-top">MY PAGE</button>
+            <button type="button" class="button-top">
+              <a
+                href="../storepages/cart.html"
+                style="text-decoration: none; color: black"
+              >
+                MY BASKET <em style="color: red;" id="basket-number"></em></a
+              >
+            </button>
+          </div>
+          <!-- TOP -->
+          <div class="top">
+            <a href="../storepages/store-2.html">
+              <img src="./images/logo1.png" style="width: 500px" />
+            </a>
+          </div>
 
-        <div class="middle-right-4">
-            <p>Color : Navy Blue | 7545/600</p>
-        </div>
-        <br>
-        <hr width="230px">
-        <div class="middle-right-4">
-            <table>
+          <!-- MIDDLE -->
+          <div id="content">
+            <div id="products"></div>
+            <div class="middle" name="shop-item" id="shop-item-detail">
+              <div class="middle-left">
+                <img
+                  class="shop-item-image"
+                  src="./images/Jacket/jacket1.jpeg"
+                />
+              </div>
+
+              <div class="middle-right" id="contents">
+                <div class="middle-right-1"></div>
+
+                <div class="middle-right-2" ">
+                <p class="shop-item-title">LINEN WORKER JACKET</p>
+              </div>
+
+              <div class="middle-right-3">
+                <p class="shop-item-description">
+                  LIGHTWEIGHT COLLARED JACKET MADE OF LINEN. FEATURING LONG
+                  SLEEVES, CHEST PATCH POCKETS WITH FLAPS, HIP PATCH
+                </p>
+              </div>
+
+              <div class="middle-right-4">
+                <p class="shop-item-price"><strong>$100.99</strong></p>
+              </div>
+
+              <div class="middle-right-4">
+                <p>Color : Navy Blue | 7545/600</p>
+              </div>
+              <br />
+              <hr width="230px" />
+              <div class="middle-right-4">
+                <a
+                  href="./pop-up.html"
+                  onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;"
+                >
+                <button
+                  class="add-cart"
+                  name="addToCartButton"
+                  onclick=""
+                  type="submit"
+                >
+                  Add to basket
+                </button>
+
+                <button
+                  class="button-product"
+                  name="addToCartButton"
+                  onclick=""
+                  type="submit"
+                >
+                  Buy now
+                </button>
+
+                <div module="Product_BasketAdd"></div>
+              </div>
+
+              <table>
                 <tbody>
-                    <td class="quantity-button">Quantity</td>
-                    <td class="size-button">Select size</td>
-            
+                  <td class="quantity-button">Quantity</td>
+                  <td class="size-button">Select size</td>
 
-
-                <tr>
+                  <tr>
                     <td class="quantity-button">
-                    <div class="quantity-controller">
-                        <input class="" min="1" name="" value="1" type="number">
-                    </div>
+                      <div class="quantity-controller">
+                        <input
+                          class=""
+                          min="1"
+                          name=""
+                          value="1"
+                          type="number"
+                        />
+                      </div>
                     </td>
                     <td>
-
-
-                        <div class="size-button">
-                            <select name="select-size" id="select-size">
-                            <option value="designer">XS</option>
-                            <option value="hacker">S</option>
-                            <option value="gamer">M</option>
-                            <option value="developer">L</option>
-                            <option value="programmer">XL</option>
-                            </select>
-                        </div>
-
-
+                      <div class="size-button">
+                        <select name="select-size" id="select-size">
+                          <option value="free">Free</option>
+                        </select>
+                      </div>
                     </td>
-                </tr>    
-            </tbody>
-            </table>
-
-        </div>
-        
-            <button class="button-product" type="submit" id="buy-now">Buy now</button>
-            <a href="./pop-up.html"
-             onclick="window.open(this.href, '_blank', 'width=900px,height=630px,top=200,left=400,toolbars=no,scrollbars=no'); return false;">
-             <button class="button-product" name="addToCartButton" onclick="" type="submit" id="add-to-basket"> Add to basket</button></a>
-
-
-
-            <div module="Product_BasketAdd">
-              
-
-
-
-
-
-
-
-
-    </div>
-
-  </div>
-
-
-
-</div>  <div class="product-description" data-name="LINEN WORKER JACKET" data-price="100.99">
-  <form class="add-to-cart" action="cart.html" method="post">
-    <div>
-      <label for="qty-1">Quantity</label>
-      <input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
-    </div>
-    <p><input type="submit" value="Add to cart" class="btn" /></p>
-  </form></div>
-</div></div>
-
-
-
-<!--bottom-->
-<div class="bottom">
-  
-    <div class="product-detail" style="width: 100%;"><h1><b>RECOMMENDED PRODUCTS</b></h1></div>
-
-<div class="recommended-items">
-              <div class="recommended-item" >
-                <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
-                <img
-                  src="./images/Jacket/jacket1.jpeg"
-                  class="product_image"/>
-                
-                
-                <div class="product-detail" style="text-align: center;color: black;">
-                  <h4><b>LINEN WORKER JACKET</b></h4>
-                  <p>$100.99</p>
-                
-                </div>
-            
-            
-              </a>
-            </div>
-            
-            <div class="recommended-item">
-              <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
-              <img
-                src="./images/Jacket/jacket2.jpeg"
-                class="product_image"/>
-              
-              
-              <div class="product-detail" style="text-align: center; color: black;">
-                <h4><b>FABRIC BOMBER JACKET</b></h4>
-                <p>$100.99</p>
-              
-              </div>
-            
-            
-            </a>
-            </div>
-            <div class="recommended-item">
-              <a href="./product-1.html" style="display: block; width: 100%; height: 100%;">
-              <img
-                src="./images/Jacket/jacket3.jpeg"
-                class="product_image"/>
-              
-              
-              <div class="product-detail" style="text-align: center; color: black;"">
-                <h4><b>LEATHER BIKER JACKET</b></h4>
-                <p>$190.99</p>
-              
-              </div>
-            </a>
-            </div>
-            
-            
-            <div class="recommended-item">
-              <a href="./product-3.html" style="display: block; width: 100%; height: 100%;">
-              <img
-                src="./images/Jacket/jacket4.jpeg"
-                class="product_image"/>
-              
-              
-              <div class="product-detail" style="text-align: center;color: black;">
-                <h4><b>BOMBER JACKET WITH POCKETS</b></h4>
-                <p>$79.99</p>
-              
-              </div>
-            </a>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-  </div>
-  
-  
-  
-  
-  
-  
-  
-  </div>
-    
-  
-  </body>
-  
-  <footer>
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Other Authorities</h3>
-          <h3>
-            <a href="../homepage/footer/copyright.html"> Copyright</a>
-          </h3>
-          <h3><a href="../homepage/footer/privacy.html">Privacy Policy</a></h3>
-          <h3><a href="..
-            ../homepage/footer/terms.html">Terms of Service</a></h3>
-        </div>
-        <div class="footer-section">
-          <h3>Student contributors</h3>
-          <ol>
-            <li>Nguyen Thi Quynh Giang <b>[s3866617]</b></li>
-            <br />
-            <li>Joo Jeong-hyeon<b>[s3865746]</b></li>
-            <br />
-            <li>Vo Khai Minh<b>[s3879953]</b></li>
-            <br />
-            <li>Ramanaharan Ramcharan<b>[s3775271]</b></li>
-          </ol>
-        </div>
-        <div class="footer-section">
-          <h3>Application Information</h3>
-          <a
-            href="https://github.com/Web-programming-sem1-2021/group-26-HTML-CSS-assignment"
-            ><img class="footer-icon" src="../icons/github-character.svg" />
-            Source Code</a
-          >
-          <a href=""
-            ><img class="footer-icon" src="../icons/footerIcons/globe.svg" />
-            Website</a
-          >
+            <button class="button-product" type="submit" id="buy-now">
+              Buy now
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-  <script src="/jsFunctions.js"></script>
-  </html>
-  
-  
+
+      <!--bottom-->
+      <div class="bottom">
+        <div class="product-detail" style="width: 100%">
+          <h1><b>RECOMMENDED PRODUCTS</b></h1>
+        </div>
+
+        <div class="recommended-item">
+          <a
+            href="./product-1.html"
+            style="display: block; width: 100%; height: 100%"
+          >
+            <img src="./images/Jacket/jacket2.jpeg" class="product_image" />
+
+            <div
+              class="product-detail"
+              style="text-align: center; color: black"
+            >
+              <h4><b>FABRIC BOMBER JACKET</b></h4>
+              <p>$100.99</p>
+            </div>
+          </a>
+        </div>
+        <div class="recommended-item">
+          <a
+            href="./product-1.html"
+            style="display: block; width: 100%; height: 100%"
+          >
+            <img src="./images/Jacket/jacket1.jpeg" class="product_image" />
+
+            <div
+              class="product-detail"
+              style="text-align: center; color: black"
+            >
+              <h4><b>FABRIC BOMBER JACKET</b></h4>
+              <p>$100.99</p>
+            </div>
+          </a>
+        </div>
+        <div class="recommended-item">
+          <a
+            href="./product-1.html"
+            style="display: block; width: 100%; height: 100%"
+          >
+            <img src="./images/Jacket/jacket3.jpeg" class="product_image" />
+
+            <div class="product-detail" style="text-align: center; color:
+            black;"">
+            <h4><b>LEATHER BIKER JACKET</b></h4>
+            <p>$190.99</p>
+          </a>
+        </div>
+
+        <div class="recommended-item">
+          <a
+            href="./product-3.html"
+            style="display: block; width: 100%; height: 100%"
+          >
+            <img src="./images/Jacket/jacket4.jpeg" class="product_image" />
+
+            <div
+              class="product-detail"
+              style="text-align: center; color: black"
+            >
+              <h4><b>BOMBER JACKET WITH POCKETS</b></h4>
+              <p>$79.99</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </body>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Other Authorities</h3>
+            <h3>
+              <a href="../homepage/footer/copyright.html"> Copyright</a>
+            </h3>
+            <h3>
+              <a href="../homepage/footer/privacy.html">Privacy Policy</a>
+            </h3>
+            <h3>
+              <a
+                href="..
+            ../homepage/footer/terms.html"
+                >Terms of Service</a
+              >
+            </h3>
+          </div>
+          <div class="footer-section">
+            <h3>Student contributors</h3>
+            <ol>
+              <li>Nguyen Thi Quynh Giang <b>[s3866617]</b></li>
+              <br />
+              <li>Joo Jeong-hyeon<b>[s3865746]</b></li>
+              <br />
+              <li>Vo Khai Minh<b>[s3879953]</b></li>
+              <br />
+              <li>Ramanaharan Ramcharan<b>[s3775271]</b></li>
+            </ol>
+          </div>
+          <div class="footer-section">
+            <h3>Application Information</h3>
+            <a
+              href="https://github.com/Web-programming-sem1-2021/group-26-HTML-CSS-assignment"
+              ><img class="footer-icon" src="../icons/github-character.svg" />
+              Source Code</a
+            >
+            <a href=""
+              ><img class="footer-icon" src="../icons/footerIcons/globe.svg" />
+              Website</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
