@@ -1,12 +1,12 @@
 //TODO: Ram
 
-// --- Config --- //
-var purecookieTitle = "I Use cookies"; // Title
-var purecookieDesc =
+
+var purecookieTitle = "I Use cookies" ; 
+var purecookieDesc = 
   "My website uses cookies necessary for its basic functioning. By contiuning browsing, you consent to my use of cookies and other technologies."; // Description
 var purecookieLink = '<a href="#" target="_blank">What for?</a>';
-var purecookieButton = "I understand"; // Button text
-// ---        --- //
+var purecookieButton = "I understand"; 
+
 
 function pureFadeIn(elem, display) {
   var el = document.getElementById(elem);
