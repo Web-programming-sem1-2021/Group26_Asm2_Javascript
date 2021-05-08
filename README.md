@@ -133,7 +133,7 @@ Group26_Asm2_Javascript
 │  └─ registerTextValidation.js
 ├─ slider.js
 ├─ storepages
-│  ├─ Basket.html
+│  ├─ cart.html
 │  ├─ basket.css
 │  ├─ browse-products-by-categories-store1.html
 │  ├─ browse-products-by-time-store1.html
