@@ -20,7 +20,7 @@
   <body>
     <!-- referenced from : "https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp" -->
     <div class="nav" id="navbar">
-      <a href="./index.html" class="homeIcon">
+      <a href="../index.html" class="homeIcon">
         <img src="../icons/ICONIC MALL.svg"
       /></a>
       <a class="nav-section" href="./about-us.html">About Us</a>
@@ -126,14 +126,153 @@
             </select>
           </div>
 
-          <br /><br />
+          <br />
 
           <div class="form-item">
             <p>Account types:</p>
-            <input type="radio" id="store-owners" name="store-owners" />
-            <label for="store-owners">Store owners</label><br />
-            <input type="radio" id="shoppers" name="shoppers" />
-            <label for="store-owners">Shoppers</label><br />
+            <p>
+              <input type="radio" id="store-owners" name="radio-group"
+              />
+              <label for="store-owners">Store Owner</label>
+            </p>
+            <div id="store-owner-form">
+              <form action="">
+                <div class="form-item">
+                  <label for="email-address">Business name:</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="business-name"
+                    required
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="phone">Store name:</label>
+                  <input type="tel" name="phone" id="store-name" required />
+                </div>
+                <div class="form-item">
+                  <label for="password">Store categories:</label>
+
+                  <div class="form-item">
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type1"
+                      />
+                      <label for="type1">Department stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type2"
+                      />
+                      <label for="type2">Grocery stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type3"
+                      />
+                      <label for="type3">Restaurants</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type4"
+                      />
+                      <label for="type4">Clothing stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type5"
+                      />
+                      <label for="day5">Accessory stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type6"
+                      />
+                      <label for="day6">Pharmacies</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type7"
+                      />
+                      <label for="type7">Technology stores</label>
+                    </div>
+
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type8"
+                      />
+                      <label for="type8">Technology stores</label>
+                    </div>
+
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type9"
+                      />
+                      <label for="type9">Pet stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type10"
+                      />
+                      <label for="type10">Toy stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type11"
+                      />
+                      <label for="type11">Specialty stores</label>
+                    </div>
+                    <div class="form-group">
+                      <input
+                        name="date"
+                        type="checkbox"
+                        class="schedule-checkbox"
+                        id="type12"
+                      />
+                      <label for="type12">Specialty stores</label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <p>
+              <input type="radio" id="shoppers" name="radio-group" />
+              <label for="shoppers">Shopper</label>
+            </p>
           </div>
 
           <div class="form-item">

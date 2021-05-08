@@ -1,4 +1,3 @@
-@import url(“https://fonts.googlecpis.com/css2?family=Poppins:wght@300;400&display=swap”);
 /* @media url(“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css”); */
 :root {
   --background-color: #fff4f4;
@@ -78,7 +77,6 @@ details {
 }
 .nav a.homeIcon img {
   text-decoration: none !important;
-  display: inline-block;
   color: var(--nav-text-color);
   text-align: center;
   widows: 2px;

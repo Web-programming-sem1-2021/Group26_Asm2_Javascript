@@ -18,6 +18,10 @@ const lastName = document.getElementById("last-name");
 const address = document.getElementById("address");
 const city = document.getElementById("city");
 const zipCode = document.getElementById("zip");
+const storeOwnerRadio = document.getElementById("store-owners");
+const shopperRadio = document.getElementById("shoppers");
+
+const storeOwnerForm = document.getElementById("store-owner-form");
 
 const {
   errorTextColor,
@@ -25,6 +29,16 @@ const {
   okTextColor,
   okBorderStyle,
 } = ERROR_STYLING_OBJECT;
+
+storeOwnerRadio.addEventListener(
+  "input",
+  (e) => (storeOwnerForm.style.display = "block")
+);
+
+shopperRadio.addEventListener(
+  "input",
+  (e) => (storeOwnerForm.style.display = "none")
+);
 
 registerSubmitButton.addEventListener("click", (e) => {
   const emailPattern = /^([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-])+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -34,7 +48,6 @@ registerSubmitButton.addEventListener("click", (e) => {
   const adddressPattern = /[A-Za-z]{3,}/;
   const cityPattern = /[A-Za-z]{3,}/;
   const zipCodePattern = /[0-9]{4,6}/;
-
   const emailErrorMessage = document.getElementById("email-error-message");
   const phoneErrorMessage = document.getElementById("phone-error-message");
   const passwordErrorMessage = document.getElementById(
