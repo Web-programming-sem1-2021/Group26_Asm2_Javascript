@@ -1,83 +1,78 @@
 //TODO: Ram
 
-// --- Config --- //
-var purecookieTitle = "I Use cookies"; // Title
-var purecookieDesc =
+const purecookieTitle = "I Use cookies";
+const purecookieDesc =
   "My website uses cookies necessary for its basic functioning. By contiuning browsing, you consent to my use of cookies and other technologies."; // Description
-var purecookieLink = '<a href="#" target="_blank">What for?</a>';
-var purecookieButton = "I understand"; // Button text
-// ---        --- //
+const purecookieLink = '<a href="#" target="_blank">What for?</a>';
+const purecookieButton = "I understand";
 
-function pureFadeIn(elem, display) {
-  var el = document.getElementById(elem);
-  el.style.opacity = 0;
-  el.style.display = display || "block";
+const pureFadeIn = (elem, display) => {
+  const element = document.getElementById(elem);
+  element.style.opacity = 0;
+  element.style.display = display || "block";
 
-  (function fade() {
-    var val = parseFloat(el.style.opacity);
-    if (!((val += 0.02) > 1)) {
-      el.style.opacity = val;
-      requestAnimationFrame(fade);
-    }
+  (fade = () => {
+    let val = parseFloat(element.style.opacity);
+    !((val += 0.02) > 1)
+      ? ((element.style.opacity = val), requestAnimationFrame(fade))
+      : {};
   })();
-}
-function pureFadeOut(elem) {
-  var el = document.getElementById(elem);
+};
+const pureFadeOut = (elem) => {
+  const el = document.getElementById(elem);
   el.style.opacity = 1;
 
-  (function fade() {
-    if ((el.style.opacity -= 0.02) < 0) {
-      el.style.display = "none";
-    } else {
-      requestAnimationFrame(fade);
-    }
+  (fade = () => {
+    (el.style.opacity -= 0.02) < 0
+      ? (el.style.display = "none")
+      : requestAnimationFrame(fade);
   })();
-}
+};
 
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
+const setCookie = (name, value, days) => {
+  let expires = "";
+  const date = new Date();
+  days
+    ? (date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000),
+      (expires = "; expires=" + date.toUTCString()))
+    : {};
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(";");
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == " ") c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
+};
+const getCookie = (name) => {
+  let nameEQ = name + "=";
+  let ca = document.cookie.split(";");
+
+  ca.forEach((item) => {
+    while (item.charAt(0) == " ") item = item.substring(1, item.length);
+    if (item.indexOf(nameEQ) == 0)
+      return item.substring(nameEQ.length, c.length);
+  });
   return null;
-}
-function eraseCookie(name) {
-  document.cookie = name + "=; Max-Age=-99999999;";
-}
+};
+const eraseCookie = (name) =>
+  (document.cookie = name + "=; Max-Age=-99999999;");
 
-function cookieConsent() {
-  if (!getCookie("purecookieDismiss")) {
-    document.body.innerHTML +=
-      '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' +
-      purecookieTitle +
-      '</a></div><div class="cookieDesc"><p>' +
-      purecookieDesc +
-      " " +
-      purecookieLink +
-      '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' +
-      purecookieButton +
-      "</a></div></div>";
-    pureFadeIn("cookieConsentContainer");
-  }
-}
+const cookieConsent = () => {
+  !getCookie("purecookieDismiss")
+    ? ((document.body.innerHTML +=
+        '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' +
+        purecookieTitle +
+        '</a></div><div class="cookieDesc"><p>' +
+        purecookieDesc +
+        " " +
+        purecookieLink +
+        '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' +
+        purecookieButton +
+        "</a></div></div>"),
+      pureFadeIn("cookieConsentContainer"))
+    : {};
+};
 
-function purecookieDismiss() {
+const purecookieDismiss = () => {
   setCookie("purecookieDismiss", "1", 7);
   pureFadeOut("cookieConsentContainer");
-}
+};
 
-window.onload = function () {
+window.onload = () => {
   cookieConsent();
 };

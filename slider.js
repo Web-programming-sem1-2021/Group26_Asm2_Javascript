@@ -1,5 +1,5 @@
 const slides = Array.from(document.querySelector(".main-slider")?.children);
-const prev = document.querySelector(".prev");
+const prev = document.querySelector(".prev"); 
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
 let index = 0;
