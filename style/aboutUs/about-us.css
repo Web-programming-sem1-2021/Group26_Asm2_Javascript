@@ -108,7 +108,6 @@ img {
   z-index: 30;
   border-radius: 10px;
   overflow-y: scroll;
-  
 }
 
 .modal-header {
@@ -117,7 +116,6 @@ img {
   font-size: 26px;
   justify-content: space-between;
   display: flex;
-  
 }
 
 .modal-header .modal-close {
@@ -134,7 +132,6 @@ img {
 .modal-body {
   padding: 10px 15px;
   color: #14463b;
-  
 }
 
 .modal-footer {
