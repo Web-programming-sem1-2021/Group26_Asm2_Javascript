@@ -1,5 +1,5 @@
 const slides = Array.from(document.querySelector(".main-slider")?.children);
-const prev = document.querySelector(".prev"); 
+const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
 const indicator = document.querySelector(".indicator");
 let index = 0;
@@ -74,18 +74,10 @@ let timer = setInterval(autoPlayMainSlider, 3000);
 
 const thumbnails = Array.from(document.getElementsByClassName("thumbnail"));
 const sliders = Array.from(document.getElementsByClassName("slider"));
-const buttonRight1 = document.getElementById("slide-right-1");
-const buttonLeft1 = document.getElementById("slide-left-1");
-const buttonRight2 = document.getElementById("slide-right-1");
-const buttonLeft2 = document.getElementById("slide-left-1");
-
-buttonLeft1.addEventListener("click", () => (sliders[0].scrollLeft -= 125));
-
-buttonRight1.addEventListener("click", () => (sliders[0].scrollLeft += 125));
-
-buttonLeft2.addEventListener("click", () => (sliders[1].scrollLeft -= 125));
-
-buttonRight2.addEventListener("click", () => (sliders[1].scrollLeft += 125));
+// const buttonRight1 = document.getElementById("slide-right-1");
+// const buttonLeft1 = document.getElementById("slide-left-1");
+// const buttonRight2 = document.getElementById("slide-right-1");
+// const buttonLeft2 = document.getElementById("slide-left-1");
 
 const maxScrollLeft = sliders[0].scrollWidth - sliders[0].clientWidth;
 // alert(maxScrollLeft);
@@ -99,7 +91,7 @@ const autoPlay = () => {
       : (slider.scrollLeft += 1)
   );
 };
-let play = setInterval(autoPlay, 20);
+let play = setInterval(autoPlay, 10);
 
 // PAUSE THE SLIDE ON HOVER
 const stop = () =>
@@ -108,7 +100,7 @@ const stop = () =>
       thumbnail.addEventListener("mouseover", () => clearInterval(play)),
       thumbnail.addEventListener(
         "mouseout",
-        () => (play = setInterval(autoPlay, 20))
+        () => (play = setInterval(autoPlay, 10))
       )
     )
   );
