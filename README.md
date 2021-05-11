@@ -28,8 +28,6 @@ Project is created with:
 - WebDev Simplified Youtube Chanel:
   - [Build a Popup With JavaScript](https://www.youtube.com/watch?v=MBaw_6cPmAw)
   - [Shoping Cart](https://www.youtube.com/watch?v=YeFzkC2awTM&t=2091s&pp=qAMBugMGCgJ2aRAB)
-- Ipsum version: 2.33
-- Ament library version: 999
 
 ---
 
