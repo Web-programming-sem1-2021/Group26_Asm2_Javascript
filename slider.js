@@ -105,4 +105,4 @@ const stop = () =>
     )
   );
 
-stop();
+window.onload = () => stop();
