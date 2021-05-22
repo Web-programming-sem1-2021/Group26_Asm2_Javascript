@@ -68,7 +68,8 @@ contactSubmitButton.addEventListener("click", (e) => {
   //Phone number
 
   phoneNumberPattern.test(phone.value)
-    ? (phone.style.boxShadow = okBorderStyle)
+    ? ((phoneErrorMessage.textContent =
+      ""),(phone.style.boxShadow = okBorderStyle))
     : ((phoneErrorMessage.style.color = errorTextColor),
       (phoneErrorMessage.textContent =
         "Your phone number must be from 9 to 11 and contain number only!"),
